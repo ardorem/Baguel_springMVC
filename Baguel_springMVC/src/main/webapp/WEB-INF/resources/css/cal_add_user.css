@@ -1,0 +1,110 @@
+main {
+  animation: fadein 3s;
+  margin-bottom: 300px;
+}
+
+#editEvent {
+  display: flex;
+  align-items: center; /* 교차 축 */
+  justify-content: space-around; /* 주축 */
+  font-size: 23px;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, auto));
+  width: 100%;
+  grid-template-rows: auto;
+  /* justify-content: center;
+  align-content: center; */
+  gap: 20px 10px; /* row column */
+  grid-template-areas:
+    "box1 box1 box1 box1"
+    "box2 box2 box3 box3"
+    "box4 box4 box5 box5"
+    "box6 box6 box6 box6"
+    "box7 box7 box7 box7"
+    "box8 box8 box9 box10";
+}
+
+.box1 {
+  grid-area: box1;
+}
+
+.box2 {
+  grid-area: box2;
+}
+.box3 {
+  grid-area: box3;
+}
+.box4 {
+  grid-area: box4;
+}
+.box5 {
+  grid-area: box5;
+}
+.box6 {
+  grid-area: box6;
+}
+.box7 {
+  grid-area: box7;
+}
+.box8 {
+  grid-area: box8;
+}
+.box9 {
+  grid-area: box9;
+}
+.box10 {
+  grid-area: box10;
+}
+#editEvent label, input, select{
+  width: 100%;
+  padding: 10px;
+}
+
+#editEvent input, select {
+  font-size: 18px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  height: 50px;
+}
+#editEvent textarea {
+  font-size: 18px;
+  border-radius: 15px;
+  border: 2px solid grey;
+  width: 100%;
+  padding: 7px;
+  resize: none;
+}
+#editEvent input[type="submit"]{
+  font-size: 25px;
+  background: #02343F;
+  color : #F0EDCC;
+  border-radius: 30px;
+  border: 2px solid transparent;
+}
+#editEvent input[type="submit"]:hover{
+  font-size: 25px;
+  background: #F0EDCC;
+  color : #02343F;
+  border-radius: 30px;
+  border: 2px solid #02343F;
+}
+#space {
+  height: 40px;
+}
+
+#space-small {
+  height: 10px;
+}
+.leftTxt {
+  font-size: 15px;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.blueTxt {
+  font-weight: 600;
+  color: blue; 
+}

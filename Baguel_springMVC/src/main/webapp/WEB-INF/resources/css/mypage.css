@@ -1,0 +1,113 @@
+main {
+  animation: fadein 2s;
+}
+#mypage {
+  display: flex;
+  margin: 50px auto;
+  flex-direction: column;
+  align-items: center; /* 교차 축 */
+  justify-content: space-around; /* 주축 */
+}
+
+#myRequest h1 {
+  margin-bottom: 30px;
+}
+#myRequest{
+  width: 1100px;
+  margin-bottom: 200px;
+  margin-top: 100px;
+}
+#mypage table{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+#mypage tr {
+  border-bottom: 1px solid #ccc;
+}
+#mypage td {
+  height: 40px;
+}
+#mypage th:nth-child(1) {
+  width: 5%;
+}
+#mypage th:nth-child(2) {
+  width: 10%;
+}
+#mypage td:nth-child(3) {
+  text-align: left;
+  padding-left: 20px;
+}
+#mypage th:nth-child(4) {
+  width: 7%;
+}
+#mypage th:nth-child(5) {
+  width:7%;
+}
+#mypage a {
+  color: black;
+}
+#mypage a:visited {
+  color: black;
+}
+#mypage a:hover {
+  color: rgb(231, 77, 77);
+}
+.complete {
+  background: rgb(0, 0, 0);
+  color: white;
+  border-radius: 10px;
+}
+
+#myCommet {
+  width: 1100px;
+  /* margin: 100px auto; */
+  margin-bottom: 200px;
+}
+
+#myCommet h1 {
+  margin-bottom: 30px;
+}
+#myCommet td {
+  height: 60px;
+}
+.comment {
+  color: rgb(0, 140, 255);
+}
+hr {
+  /* border: 2px solid rgba(128, 128, 128, 0.5); */
+  display: none;
+  width: 1100px;
+}
+
+#mypage input[type="button"]{
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  background: #02343F;
+  color : #F0EDCC;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  margin: 200px auto;
+}
+#mypage input[type="button"]:hover{
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  background: #F0EDCC;
+  color : #02343F;
+  border-radius: 30px;
+  border: 2px solid #02343F;
+  margin: 200px auto;
+}
+#addOk {
+  display: block;
+  text-align: center;
+  margin: 100px auto;
+  max-width: 800px;
+  font-size: 45px;
+}
+.welcome {
+  font-size: 30px;
+}

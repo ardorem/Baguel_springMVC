@@ -1,0 +1,25 @@
+/* ##################  main start ################## */
+
+main {
+  height: 650px;
+ margin-bottom: 300px;
+}
+
+#addOk h1 {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 800px;
+  padding-top: 190px;
+  font-size: 45px;
+}
+#addOk h3 {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  padding-top: 50px;
+  max-width: 800px;
+  font-size: 30px;
+}
+
+/* ##################  main end ################## */

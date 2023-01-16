@@ -1,0 +1,60 @@
+/* ##################  main start ################## */
+
+main {
+  animation: fadein 3s;
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+#mainTitleUser p {
+  display: block;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 60px auto;
+  background: rgba(102, 102, 102, 0.288);
+  border-radius: 10px;
+}
+
+#colorBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+#colorName {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-family: "NanumRg";
+  font-weight: 700;
+  border: 1px solid grey;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  text-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.521);
+}
+#colorBar div:nth-child(1) {
+  background: #0934E6;
+}
+#colorBar div:nth-child(2) {
+  background: #127E3B;
+}
+#colorBar div:nth-child(3) {
+  background: #FFA800;
+}
+#colorBar div:nth-child(4) {
+  background: #C20000;
+}
+
+#map {
+  width: 100%;
+  height: 700px;
+}
+
+
+
+/* ##################  main end ################## */

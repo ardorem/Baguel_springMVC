@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.IMemberRepository">
+	<resultMap type="com.project.baguel.model.MemberDTO"
+		id="getMemInfo">
+<!-- 		<result property="memnum" column="memnum" /> -->
+		<result property="userId" column="userId" />
+		<result property="userPw" column="userPw" />
+		<result property="userName" column="userName" />
+		<result property="userNick" column="userNick" />
+		<result property="userEmail" column="userEmail" />
+		<result property="joindate" column="joindate" />
+	</resultMap>
+	
+	<select id="userCheck" resultType="string">
+		SELECT userPw FROM members WHERE userId = #{userId} AND status NOT IN 0
+	</select>
+	
+	<select id="getMember" resultMap="getMemInfo">
+		SELECT * FROM members WHERE userId = #{userId} AND status Not in 0
+	</select>
+	
+	<select id="insertIdCheck" resultType="string">
+		SELECT userId FROM members WHERE userId = #{userId}  AND status Not in 0
+	</select>
+	
+	<select id="modifyNickCheck" resultType="string">
+		SELECT userId FROM members WHERE userNick = #{userNick} AND status NOT IN 0 AND userId NOT LIKE #{userId}
+	</select>
+		
+	<insert id="insertMember">
+		INSERT INTO members
+		VALUES (#{userId},#{userPw},#{userName},#{userNick},#{userEmail},#{joinDate}, members_seq.nextval, 1)
+	</insert>
+	
+	<update id="deactiveMember">
+		UPDATE members SET status = 0 WHERE userId=#{userId}
+	</update>
+	
+	<select id="updateNickCheck" resultType="string">
+		SELECT userId FROM members WHERE userNick = #{userNick} AND status NOT IN 0 AND userId NOT LIKE #{userId}
+	</select>
+	
+	<update id="updateMember">
+		UPDATE members SET userPw=#{userPw}, userName=#{userName}, userNick=#{userNick}, userEmail=#{userEmail} WHERE userId=#{userId}
+	</update>
+	
+	<select id="findUserId" resultMap="getMemInfo">
+		SELECT userId , joindate
+		FROM members
+		WHERE userName = #{userName} AND userEmail=#{userEmail}
+	</select>
+	
+	<select id="resetUserPwCheck" resultType="string">
+		SELECT userId FROM members WHERE userId = #{userId} AND userName = #{userName} AND userEmail = #{userEmail}
+	</select>
+	
+	<update id="resetUserPw">
+		UPDATE members SET userPw = #{newPw} WHERE userId = #{userId}
+	</update>
+	
+</mapper>

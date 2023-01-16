@@ -1,0 +1,185 @@
+#article {
+  /* text-align: center; */
+  /* margin-bottom: 300px; */
+}
+
+[class*="col-"] {
+  /* padding: 8px; */
+  /* border: 1px dotted gray; */
+  /* text-align: center; */
+  padding: 5px;
+  /* background: #def1c5; */
+}
+
+/* ##################  main start ################## */
+
+main {
+  animation: fadein 3s;
+  margin-bottom: 300px;
+}
+
+#regEvent {
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-around;  */
+  width: 90%;
+  margin: 50px auto;
+  font-size: 23px;
+}
+
+#buttons {
+  width: 100%;
+  font-size: 25px;
+  background: #02343F;
+  color: #F0EDCC;
+  /* border-radius: 30px; */
+  border: 2px solid transparent;
+}
+
+#edit_btn {
+  background: #02343F;
+  color: #F0EDCC;
+  /* border-radius: 30px; */
+  border: 2px solid transparent;
+}
+
+/* 댓글 관련 */
+#comment {
+  text-align: justify;
+  padding: 20px;
+}
+#reply {
+  text-align: justify;
+  padding-left: 80px;
+
+}
+
+.commentInner {
+  padding-left: 10px;
+}
+
+#approval {
+  width: 100%;
+  height: 55px;
+  line-height: 50px;
+  padding: 0;
+  float: right;
+}
+
+#eventTitle {
+  /* padding-bottom: 100px; */
+  /* background-color: rgb(134, 199, 177); */
+  background-color: rgba(134, 199, 177, 0.623);
+}
+
+#eventInfo {
+  text-align: center;
+  background-color: rgba(134, 199, 177, 0.623);
+  font-size: 30px;
+}
+
+#eventDesc {
+  padding: 20px 5px 100px 5px;
+}
+#addReplyBtn, #editBtn {
+  font-size: 15px;
+  padding: 3px 10px;
+  /* float: right; */
+}
+
+#editConfirmComment, #editCancel {
+  font-size: 15px;
+  padding: 3px 10px;
+  float: right;
+  /* display: none; */
+  margin-right: 10px;
+}
+
+#countBadge {
+  font-size: 13px;
+  line-height: 25px;
+  height: 30px;
+  width: 100px;
+  padding: 3px 10px;
+  float: right;
+}
+#countBadge1 {
+  font-size: 13px;
+  line-height: 25px;
+  height: 30px;
+  width: 100px;
+  padding: 3px 10px;
+  float: right;
+}
+.replyBtn {
+  display: none;
+}
+#countBadge {
+  font-size: 13px;
+  line-height: 25px;
+  height: 30px;
+  width: 100px;
+  padding: 3px 10px;
+  float: right;
+  margin-right: 10px;
+}
+#confirmReply {
+  font-size: 15px;
+  padding: 3px 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+#viewCount {
+  text-align: right;
+  padding-right: 20px;
+}
+/**************************************************** 댓글 폼 */
+#leaveComment textarea {
+  min-height: 130px;
+  resize: none;
+  /* overflow: hidden; */
+}
+#leaveComment label {
+  font-size:20px;
+}
+.writer {
+  box-shadow: inset 0 -0.5em 0 #FFC008;
+}
+
+.innerReply {
+  resize: none;
+  width: 100%;
+  min-height: 80px;
+  border: none;
+  outline: none;
+  /* transition: none; */
+  /* font-size: 16px; */
+  /* overflow: hidden; */
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem!important;
+  line-height: 1.5!important;
+  text-align: justify;
+}
+.addReply {
+  display: none;
+}
+
+#goBack {
+  background: #02343F;
+  color: #F0EDCC;
+  width: 100%;
+  height: 50px;
+}
+#commentHr {
+  background: black;
+  height:3px;
+  border:0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* ##################  main end ################## */

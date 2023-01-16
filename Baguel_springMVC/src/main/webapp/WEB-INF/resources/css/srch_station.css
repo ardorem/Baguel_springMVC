@@ -1,0 +1,82 @@
+/* ##################  main start ################## */
+main {
+  height: 1000px;
+}
+/*  **********************************************************    slide */
+
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+#search {
+  animation: fadein 3s;
+  justify-content: stretch;
+  display: flex;
+  align-items: center; /* 교차 축 */
+  justify-content: space-around; /* 주축 */
+}
+#search h4{
+  text-shadow: 0 -1px 0 #222;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#wrapper {
+  display: grid;
+  /* grid-template-columns: 480px 480px 250px; */
+  grid-template-columns: 450px 450px 100px;
+  /* grid-template-rows: 100px; */
+  /* transform: translate(-50%, -50%); */
+}
+input{
+  /* position: relative; */
+  width: 400px;
+  height: 60px;
+  border: 5px solid #00B050;
+  /* position:relative;  */
+  /* padding: 0 40px 0 15px; */
+  padding: 3px;
+  /* font: 20px; */
+  /* background: url('images/calendar.png') no-repeat right center / 15px auto; */
+  /* content : attr(data-placeholder); */
+}
+
+
+#selcetPlace {
+  margin-left: 250px;
+  padding-left: 10px;
+}
+#searchIcon {
+  /* background-image: url('Images/search.png'); */
+  /* background-image: url('/images/search.png'); */
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+}
+#btnimg {
+  height: 60px;
+  width: 60px;
+  margin-top: 20px;
+}
+#bestStation {
+  margin-top: 50px;
+  /* margin-left: 70px; */
+}
+#bestStation > ol > li {
+  margin-left: 25px;
+  line-height: 180%;
+}
+#subwayLinemap{
+  margin-top: 50px;
+}
+#subwayImg {
+width: 100%;
+}
+#subwayImg:hover{
+  transform: scale(2.0);
+  transition: .5s;
+}
+
+/*  ***********************************************    slide */
+/* ##################  main end ################## */
