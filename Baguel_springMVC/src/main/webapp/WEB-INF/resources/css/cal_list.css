@@ -43,10 +43,13 @@ main {
   padding-left: 20px;
 }
 #order th:nth-child(4) {
-  width: 7%;
+  width: 13%;
 }
 #order th:nth-child(5) {
   width:7%;
+}
+#order th:nth-child(6) {
+  width:6%;
 }
 
 #order a {

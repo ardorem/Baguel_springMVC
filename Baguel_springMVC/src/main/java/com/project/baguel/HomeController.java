@@ -19,22 +19,34 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	@RequestMapping("about")
+	public String logoutNevigate() {
+		System.out.println("> Controller → about");
+		return "about";
+	}
 	
-//	@RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-//	public String home(Locale locale, Model model) {
-//		logger.info("Welcome home! The client locale is {}.", locale);
-//		
-//		Date date = new Date();
-//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-//		
-//		String formattedDate = dateFormat.format(date);
-//		
-//		model.addAttribute("serverTime", formattedDate );
-//		
-//		return "main";
+//	@RequestMapping("srch_place")
+//	public String srchPlaceNevigate() {
+//		System.out.println("> Controller → srchPlaceNevigate");
+//		return "srch_place";
 //	}
+//	
+	@RequestMapping("srch_station")
+	public String srchStationNevigate() {
+		System.out.println("> Controller → srchStationNevigate");
+		return "srch_station";
+	}
+	
+	@RequestMapping("cal_view")
+	public String calViewNevigate() {
+		System.out.println("> Controller → calViewNevigate");
+		return "cal_view";
+	}
+	
+	@RequestMapping("map")
+	public String mapNevigate() {
+		System.out.println("> Controller → mapNevigate");
+		return "map";
+	}
 	
 }

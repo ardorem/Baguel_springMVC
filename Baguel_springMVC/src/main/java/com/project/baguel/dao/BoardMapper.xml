@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.IBoardRepository">
+
+	<resultMap type="com.project.baguel.model.BoardDTO"
+		id="getBoard">
+		<result property="boardNum" column="boardNum" />
+		<result property="writeDate" column="writeDate" />
+		<result property="eventPlace" column="eventPlace" />
+		<result property="event" column="event" />
+		<result property="userNick" column="userNick" />
+		<result property="approval" column="approval" />
+		<result property="viewcount" column="viewcount" />
+		<result property="status" column="status" />
+		<result property="editDate" column="editDate" />
+	</resultMap>
+
+	<resultMap type="com.project.baguel.model.BoardDTO"
+		id="getArticle">
+		<result property="eventPlace" column="eventPlace" />
+		<result property="event" column="event" />
+		<result property="eventType" column="eventType" />
+		<result property="eventFrom" column="eventFrom" />
+		<result property="eventTo" column="eventTo" />
+		<result property="writeDate" column="writeDate" />
+		<result property="userId" column="userId" />
+		<result property="editDate" column="editDate" />
+		<result property="viewcount" column="viewcount" />
+		<result property="eventDesc" column="eventDesc" />
+		<result property="adminMSG" column="adminMSG" />
+		<result property="approval" column="approval" />
+		<result property="userNick" column="userNick" />
+	</resultMap>
+
+	<select id="countArticles" resultType="int">
+		SELECT count(event) COUNT
+		FROM board
+<!-- 		WHERE status = '1' -->
+	</select>
+
+	<select id="getArticles" resultMap="getBoard">
+		SELECT boardNum,
+		SUBSTR(writedate,0,10) writedate, eventplace, event,
+		approval,
+		viewcount, userNick, status, editDate
+		FROM (SELECT rownum rn, a1.*
+		FROM (SELECT
+		b1.*
+		FROM
+		(select b4.*, m.userNick
+		from board b4 left outer join
+		members m
+		on
+		b4.userId = m.userId) b1
+		order by b1.boardnum
+		desc)a1)a2
+		WHERE rn BETWEEN #{minArticle} AND #{maxArticle}
+	</select>
+
+	<insert id="insertArticle">
+		INSERT INTO board
+		VALUES(board_seq.nextval,
+		#{eventFrom}, #{eventTo}, #{eventPlace}, #{eventType}, #{event},
+		TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', #{eventDesc}, '',#{userId},
+		0, 0, 1)
+	</insert>
+
+	<update id="increaseViews">
+		UPDATE board SET viewcount = viewcount+1 WHERE boardNum = #{boardNum}
+	</update>
+
+	<select id="getArticle" resultMap="getArticle">
+		SELECT eventPlace, event,
+		eventType, eventFrom, eventTo, userId, writeDate,
+		editDate, viewcount,
+		eventDesc, adminMSG, approval, userNick
+		FROM (select b4.*, m.userNick
+		from board b4 left outer join
+		members m on b4.userId = m.userId)
+		WHERE boardNum = #{boardNum}
+	</select>
+
+	<update id="editArticle">
+		UPDATE board SET
+		eventFrom=#{eventFrom},eventTo=#{eventTo},eventPlace=#{eventPlace},eventType=#{eventType},event=#{event},eventDesc=#{eventDesc},
+		editDate=TO_char(SYSDATE,'YYYY-MM-DD HH24:MI') WHERE
+		boardNum=#{boardNum}
+	</update>
+	
+	<update id="deactiveArticle">
+		UPDATE board SET status='0' WHERE boardNum = #{boardNum}
+	</update>
+	
+</mapper>

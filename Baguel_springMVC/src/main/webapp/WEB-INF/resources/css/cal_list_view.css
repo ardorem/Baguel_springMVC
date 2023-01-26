@@ -89,7 +89,7 @@ main {
   /* float: right; */
 }
 
-#editConfirmComment, #editCancel {
+#editConfirmComment, #editCancel, #deleteComment {
   font-size: 15px;
   padding: 3px 10px;
   float: right;

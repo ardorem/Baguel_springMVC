@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/header_footer.css">
-  <link rel="stylesheet" href="css/register_ok.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register_ok.css">
   <title>바글</title>
 </head>
 
@@ -18,43 +18,42 @@
   <div id="container">
     <!-- ****************************************************************************** header & nav start-->
     <header>
-      <a href="main">
-        <div id="logo">
-          <p>바글🚶‍♂️🚶🚶‍♀️</p>
-        </div>
+      <a href="${pageContext.request.contextPath}/main" id="logo">
+        <p>바글🚶‍♂️🚶🚶‍♀️</p>
       </a>
       <div id="loginMenu">
 		<c:choose>
-			<c:when test="${userLogin eq null }">
-	        	<a href="register">회원가입</a>
-				<a href="login">로그인</a>
+			<c:when test="${userLogin eq 'logined' }">
+				${userId }&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath}/mypage">마이페이지</a>
+				<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 			</c:when>
 			<c:otherwise>
-				${userId }&nbsp;&nbsp;
-				<a href="mypage">마이페이지</a>
-				<a href="/baguel/logout.do">로그아웃</a>
+	      <a href="${pageContext.request.contextPath}/register">회원가입</a>
+				<a href="${pageContext.request.contextPath}/login">로그인</a>
 			</c:otherwise>
 		</c:choose>
+		</div>
     </header>
     <nav>
       <ul id="navi">
         <li><a href="#">조회</a>
           <ul>
-            <li><a href="srch_station.html">역으로 조회</a></li>
-            <li><a href="srch_place.html">장소로 조회</a></li>
+            <li><a href="${pageContext.request.contextPath}/srch_station">역으로 조회</a></li>
+            <li><a href="${pageContext.request.contextPath}/srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view.html">캘린더</a>
+        <li><a href="${pageContext.request.contextPath}/cal_view">캘린더</a>
           <ul>
-            <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="/baguel/list.do">등록된 일정</a></li>
-            <li><a href="cal_view.html">캘린더 보기</a></li>
+            <li><a href="${pageContext.request.contextPath}/cal_add">일정 등록</a></li>
+            <li><a href="${pageContext.request.contextPath}/cal_list">등록된 일정</a></li>
+            <li><a href="${pageContext.request.contextPath}/cal_view">캘린더 보기</a></li>
           </ul>
         </li>
-        <li><a href="map">지도로 보기</a></li>
+        <li><a href="${pageContext.request.contextPath}/map">지도로 보기</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
-            <li><a href="about.html">about 바글</a></li>
+            <li><a href="${pageContext.request.contextPath}/about">about 바글</a></li>
           </ul>
         </li>
       </ul>
@@ -86,7 +85,7 @@
         <div class="col-12" id="gap"></div>
         <div class="col-12" id="gap"></div>
         <div class="col-12">
-          <a href="login" class="btn btn-outline-success"  id="linkAction">로그인</a>
+          <a href="${pageContext.request.contextPath}/login" class="btn btn-outline-success"  id="linkAction">로그인</a>
         </div>
       </div>
     </main>
@@ -103,9 +102,9 @@
         </ul>
         <div id="sns">
           <ul>
-            <li><a href="#"><img src="images/sns-1.png"></a></li>
-            <li><a href="#"><img src="images/sns-2.png"></a></li>
-            <li><a href="#"><img src="images/sns-3.png"></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-1.png"></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-2.png"></a></li>
+						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-3.png"></a></li>
             <li></li>
           </ul>
         </div>

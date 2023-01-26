@@ -22,12 +22,40 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources location="/WEB-INF/resources/" mapping="/**" />
 	<mvc:resources location="/WEB-INF/resources/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/resources/images/" mapping="/images/**" />
 	
 	<mvc:view-controller path="/" view-name="main" />
 	<mvc:view-controller path="main" view-name="main" />
 	<context:component-scan base-package="com.project.baguel.controller" />
 	<context:component-scan base-package="com.project.baguel" />
 	
+	<!-- login LoginInterceptor -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/cal_add/**"/>
+			<mvc:mapping path="/cal_list/**"/>
+			<mvc:mapping path="/cal_view/**"/>
+			<mvc:mapping path="/map/**"/>
+			<mvc:mapping path="/mypage/**"/>
+			<!-- 부분적으로 필터를 제외 할 경우 -->
+			<!-- <mvc:exclude-mapping path="/board/cat/**"/> -->
+			<bean class="com.project.baguel.common.filter.LoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
+	<!-- login NonLoginInterceptor -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/register/**"/>
+			<mvc:mapping path="/find_id/**"/>
+			<mvc:mapping path="/find_pw/**"/>
+			<mvc:mapping path="/found_id/**"/>
+			<mvc:mapping path="/found_pw/**"/>
+			<mvc:mapping path="/login/**"/>
+			<!-- 부분적으로 필터를 제외 할 경우 -->
+			<!-- <mvc:exclude-mapping path="/board/cat/**"/> -->
+			<bean class="com.project.baguel.common.filter.NonLoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>

@@ -2,13 +2,8 @@ package com.project.baguel.controller;
 
 import java.io.PrintWriter;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -16,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.baguel.model.MemberDTO;
 import com.project.baguel.service.member.*;
@@ -93,14 +90,14 @@ public class MController {
 			out.println("history.back();");
 			out.println("</script>");
 			out.flush();
-			return "home"; // return을 해주지 않으면 오류 발생
+			return "login"; // return을 해주지 않으면 오류 발생
 		} else if (result == IMemberService.MEMBER_LOGIN_PW_NO_GOOD) {
 			out.println("<script>");
 			out.println("alert(\"비밀번호가 일치하지 않습니다.\");");
 			out.println("history.back();");
 			out.println("</script>");
 			out.flush();
-			return "home";
+			return "login";
 		} else if (result == 1) {
 			mLogin.execute(model);
 			Map<String, Object> loginMemberMap = model.asMap();
@@ -120,7 +117,20 @@ public class MController {
 		}
 		return "login_ok";
 	}
-
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		System.out.println("> Controller → logout");
+		session.invalidate();
+		return "redirect:/logout_ok";
+	}
+	
+	@RequestMapping("logout_ok")
+	public String logoutNevigate() {
+		System.out.println("> Controller → logout_ok");
+		return "logout_ok";
+	}
+	
 	@RequestMapping(value = "register", method = RequestMethod.GET)
 	public String register() {
 		System.out.println("> Controller → register(GET)");
@@ -164,12 +174,18 @@ public class MController {
 			return "register";
 		} else {
 			mInsertMember.execute(model);
-			model.addAttribute("userId", memberDTO.getUserId());
-			return "register_ok";
+//			model.addAttribute("userId", memberDTO.getUserId());
+			return "redirect:/register_ok/"+memberDTO.getUserId();
 		}
-
 	}
 
+	@RequestMapping(value="/register_ok/{userId}")
+	public String registerOkNevigate(@PathVariable String userId, Model model) {
+		System.out.println("> Controller → registerOkNevigate");
+		model.addAttribute("userId", userId);
+		return "/register_ok";
+	}
+	
 	@RequestMapping(value = "modify_pw_check", method = RequestMethod.GET)
 	public String pwCheckNevigate() {
 		System.out.println("> Controller → modify_pw_check(GET)");
@@ -203,15 +219,7 @@ public class MController {
 			model.addAttribute("userEmail", loginMember.getUserEmail());
 			return "modify";
 		}
-
 		return "modify_pw_check";
-	}
-	
-	@RequestMapping("logout")
-	public String logout(HttpSession session) {
-		System.out.println("> Controller → logout");
-		session.invalidate();
-		return "logout";
 	}
 	
 	@RequestMapping("deactive")
@@ -224,7 +232,6 @@ public class MController {
 		return "goodbye";
 	}
 
-	
 	@RequestMapping("modify")
 	public String modify(MemberDTO memberDTO, Model model, HttpSession session,  HttpServletResponse response) throws Exception {
 		System.out.println("> Controller → modify");
@@ -248,9 +255,19 @@ public class MController {
 			return "modify";
 			
 		} else {
+			
 			mUpdateMember.execute(model);
-			return "modify_ok";
+			Map<String, Object> changeNick = model.asMap();
+			String newNick = String.valueOf(changeNick.get("newNick"));
+			session.setAttribute("userNick", newNick);
+			return "redirect:/modify_ok";
 		}
+	}
+	
+	@RequestMapping("modify_ok")
+	public String modifyOkNevigate() {
+		System.out.println("> Controller → modify_ok");
+		return "modify_ok";
 	}
 	
 	@RequestMapping(value = "find_id", method = RequestMethod.GET)
@@ -263,7 +280,7 @@ public class MController {
 		return "find_pw";
 	}
 	
-	@RequestMapping("found_id")
+	@RequestMapping(value = "find_id", method = RequestMethod.POST)
 	public String findUserId(MemberDTO memberDTO, Model model, HttpServletResponse response) throws Exception {
 		System.out.println("> Controller → findUserId(POST)");
 		response.setContentType("text/html; charset=UTF-8");
@@ -295,8 +312,8 @@ public class MController {
 
 	}
 	
-	@RequestMapping("found_pw")
-	public String resetUserId(MemberDTO memberDTO, Model model, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "find_pw", method = RequestMethod.POST)
+	public String resetUserId(MemberDTO memberDTO, Model model, HttpServletResponse response, RedirectAttributes redirectAttributes) throws Exception {
 		System.out.println("> Controller → resetUserId(POST)");
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -316,7 +333,10 @@ public class MController {
 			return "find_pw";
 		} else if(result == IMemberService.MEMBER_EXISTENT){
 			mResetUserPw.execute(model);
-			return "found_pw";
+			Map<String, Object> mapPw = model.asMap();
+			String newPw = String.valueOf(mapPw.get("newPw"));
+			redirectAttributes.addFlashAttribute("newPw", newPw); // as POST method
+			return "redirect:/found_pw";
 		} else {
 			out.println("<script>");
 			out.println("alert(\"다시 시도해 주세요\");");
@@ -325,7 +345,11 @@ public class MController {
 			out.flush();
 			return "find_pw";
 		}
-		
 	}
 	
+	@RequestMapping("found_pw")
+	public String foundPwNevigate() {
+		System.out.println("> Controller → foundPwNevigate");
+		return "found_pw";
+	}
 }

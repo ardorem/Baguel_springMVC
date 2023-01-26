@@ -17,44 +17,42 @@
   <div id="container">
     <!-- ****************************************************************************** header & nav start-->
     <header>
-      <a href="main">
-        <div id="logo">
-          <p>바글🚶‍♂️🚶🚶‍♀️</p>
-        </div>
+      <a href="main" id="logo">
+        <p>바글🚶‍♂️🚶🚶‍♀️</p>
       </a>
       <div id="loginMenu">
 		<c:choose>
-			<c:when test="${userLogin eq null }">
-	        	<a href="register">회원가입</a>
-				<a href="login">로그인</a>
-			</c:when>
-			<c:otherwise>
+			<c:when test="${userLogin eq 'logined' }">
 				${userId }&nbsp;&nbsp;
 				<a href="mypage">마이페이지</a>
-				<a href="/baguel/logout.do">로그아웃</a>
+				<a href="logout">로그아웃</a>
+			</c:when>
+			<c:otherwise>
+	      <a href="register">회원가입</a>
+				<a href="login">로그인</a>
 			</c:otherwise>
 		</c:choose>
-	</div>  
+		</div>
     </header>
     <nav>
       <ul id="navi">
         <li><a href="#">조회</a>
           <ul>
-            <li><a href="srch_station.html">역으로 조회</a></li>
-            <li><a href="srch_place.html">장소로 조회</a></li>
+            <li><a href="srch_station">역으로 조회</a></li>
+            <li><a href="srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view.html">캘린더</a>
+        <li><a href="cal_view">캘린더</a>
           <ul>
             <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="/baguel/list.do?page=1">등록된 일정</a></li>
-            <li><a href="cal_view.html">캘린더 보기</a></li>
+            <li><a href="cal_list">등록된 일정</a></li>
+            <li><a href="cal_view">캘린더 보기</a></li>
           </ul>
         </li>
         <li><a href="map">지도로 보기</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
-            <li><a href="about.html">about 바글</a></li>
+            <li><a href="about">about 바글</a></li>
           </ul>
         </li>
       </ul>

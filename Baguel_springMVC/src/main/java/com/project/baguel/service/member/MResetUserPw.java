@@ -25,7 +25,7 @@ public class MResetUserPw implements IMemberService {
     String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     String lowerCase = "abcdefghijklmnopqrstuvwxyz";
     String numbers = "0123456789";
-    String specialChar = "!@#$%^*+=-";
+    String specialChar = "!@#$^*+=-";
     int upperCaseLength = upperCase.length();
     int lowerCaseLength = lowerCase.length();
     int numbersLength = numbers.length();

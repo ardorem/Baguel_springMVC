@@ -1,5 +1,7 @@
 package com.project.baguel.service.board;
 
-public interface IBoardService {
+import org.springframework.ui.Model;
 
+public interface IBoardService {
+	void execute(Model model);
 }

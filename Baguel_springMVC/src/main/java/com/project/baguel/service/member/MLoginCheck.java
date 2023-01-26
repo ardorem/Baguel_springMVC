@@ -21,7 +21,7 @@ public class MLoginCheck implements IMemberService {
 		String userId = String.valueOf(map.get("userId"));
 		String userPw = String.valueOf(map.get("userPw"));
 		String dbPw = memberRepository.userCheck(userId);
-		
+		System.out.println(dbPw);
 		if(dbPw != null) {
 			if(dbPw.equals(userPw)) {
 				model.addAttribute("result", MEMBER_LOGIN_SUCCESS);

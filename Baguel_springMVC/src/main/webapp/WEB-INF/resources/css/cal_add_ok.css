@@ -10,16 +10,22 @@ main {
   text-align: center;
   margin: 10px auto;
   max-width: 800px;
-  padding-top: 190px;
+  /* padding-top: 10px; */
   font-size: 45px;
 }
 #addOk h3 {
   display: block;
   text-align: center;
-  margin: 10px auto;
-  padding-top: 50px;
+  margin: 5px auto;
+  padding: 25px 0;
   max-width: 800px;
   font-size: 30px;
 }
-
+#emphasis {
+  background: #3e976d;
+  border-radius: 20px;
+  color: white;
+  line-height: 100px;
+  box-shadow: 0 6px 6px 0 gray;
+}
 /* ##################  main end ################## */

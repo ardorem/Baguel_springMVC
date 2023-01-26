@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.ICommentsRepository">
+
+	<resultMap type="com.project.baguel.model.CommentsDTO"
+		id="getParentComments">
+		<result property="commentNum" column="commentNum" />
+		<result property="boardNum" column="boardNum" />
+		<result property="writeDate" column="writeDate" />
+		<result property="content" column="content" />
+		<result property="userId" column="userId" />
+		<result property="isEdited" column="isEdited" />
+		<result property="status" column="status" />
+		<result property="userNick" column="userNick" />
+	</resultMap>
+	
+	<resultMap type="com.project.baguel.model.CommentsDTO"
+		id="getChildComments">
+		<result property="commentNum" column="commentNum" />
+		<result property="parentComment" column="parentComment" />
+		<result property="writeDate" column="writeDate" />
+		<result property="content" column="content" />
+		<result property="userId" column="userId" />
+		<result property="isEdited" column="isEdited" />
+		<result property="status" column="status" />
+		<result property="userNick" column="userNick" />
+	</resultMap>
+	
+	<select id="getParentComments" resultMap="getParentComments">
+		SELECT commentNum, boardNum, writeDate, content, userId, isEdited, status, userNick
+		FROM (SELECT c.*, m.userNick
+		FROM comments c LEFT OUTER JOIN 
+		members m ON c.userId = m.userId)
+		WHERE boardNum = #{boardNum} AND commentType = '1' ORDER BY commentNum
+	</select>
+	
+	<select id="getChildComments" resultMap="getChildComments">
+		SELECT commentNum, parentComment, writeDate, content, userId, isEdited, status, userNick
+		FROM (SELECT c.*, m.userNick
+		FROM comments c LEFT OUTER JOIN 
+		members m ON c.userId = m.userId)
+		WHERE boardNum = #{boardNum} AND commentType = '2' ORDER BY commentNum
+	</select>
+	
+	<update id="editComment">
+		UPDATE comments SET content = #{content}, isEdited = '1' WHERE commentNum=#{commentNum}
+	</update>
+
+	<insert id="addComment">
+		INSERT INTO COMMENTS VALUES(COMMENT_NUM_seq.nextval,
+		0 , #{boardNum}, TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'),#{content}, #{userId}, '0', '1', '1')
+	</insert>
+
+	<insert id="addChildComment">
+		INSERT INTO COMMENTS VALUES(COMMENT_NUM_seq.nextval,
+		#{parentComment}, #{boardNum}, TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'),#{content},
+		#{userId}, '0', '2', '1')
+	</insert>
+	
+	<update id="deactiveComment">
+		UPDATE comments SET status=0 WHERE commentNum=#{commentNum}
+	</update>
+	
+</mapper>

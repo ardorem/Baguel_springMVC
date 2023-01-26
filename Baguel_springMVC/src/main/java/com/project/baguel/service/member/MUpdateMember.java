@@ -25,7 +25,9 @@ public class MUpdateMember implements IMemberService {
 		String userPw = memberDTO.getUserPw();
 		String userName = memberDTO.getUserName();
 		String userNick = memberDTO.getUserNick();
+		System.out.println("userNick is : " + userNick);
 		String userEmail = memberDTO.getUserEmail();
+		model.addAttribute("newNick",userNick);
 		memberRepository.updateMember(userId, userPw, userName, userNick, userEmail);
 	}
 

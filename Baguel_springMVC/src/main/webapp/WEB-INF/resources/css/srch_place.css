@@ -1,83 +1,86 @@
 /* ##################  main start ################## */
 main {
-  height: 1000px;
+  /* height: 1000px; */
+  margin-bottom: 200px;
 }
 /*  **********************************************************    slide */
 
-#search {
-  animation: fadein 3s;
-  position: absolute;
-  top: 38%;
-  left: 20%;
-  display: grid;
-  grid-template-columns: 480px 480px 250px;
-  grid-template-rows: 100px;
-  /* transform: translate(-50%, -50%); */
-  justify-content: stretch;
-}
-#search h4{
-  text-shadow: 0 -1px 0 #222;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-input{
-  position: relative;
-  width: 400px;
-  height: 60px;
-  border: 5px solid #00B050;
-}
-input {
-  position:relative; 
-  padding: 0 40px 0 15px;
-  /* font: 20px; */
-  /* background: url('images/calendar.png') no-repeat right center / 15px auto; */
-  content : attr(data-placeholder);
-}
-input[type="date"]::-webkit-clear-button {display: none;}
-input[type="date"]::-webkit-inner-spin-button{display: none;}
-input[type="date"]::-webkit-calendar-picker-indicator{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  /* background: transparent  */
-  background: url("images/calendar.png") no-repeat;
-  /* color: transparent; */
-  /* cursor: pointer; */
-}
-#selcetPlace {
-  margin-left: 250px;
-  padding-left: 10px;
-}
-#searchIcon {
-  background-image: url('Images/search.png');
-  position: absolute;
-  background-color: transparent;
-  border: none;
-  margin-top: 10px;
-}
-#btnimg {
-  height: 60px;
-  width: 60px;
-  margin-top: 20px;
-}
-#bestPlace {
-  margin-top: 50px;
-  /* margin-left: 70px; */
-  /* grid-column-start: 1;
-  grid-row-start: 2; */
-}
-#bestPlace > ol > li {
-  line-height: 180%;
-}
-.placePhoto {
-  position: relative;
-  margin-top: 50px;
-  /* overflow: hidden; */
-  /* grid-column: 2/5;
-  grid-row-start: 2; */
+#mainContent {
+  width: 60%;
+  min-width: 500px;
+  margin: 50px auto;
+  font-size: 23px;
 }
 
-/*  ***********************************************    slide */
-/* ##################  main end ################## */
+
+#srchForm select, input{
+  border: 5px solid #00B050;
+  padding:  10px;
+  width: 100%;
+}
+
+#srchForm {
+  margin-bottom: 50px;
+  
+}
+
+#selected {
+  color: grey;
+  font-size: 0.8em;
+}
+
+
+#searchIcon {
+  border: none;
+  background-color: transparent;
+  /* padding-top: 40px; */
+  margin: 25px auto;
+}
+
+#btnimg {
+  width: 50px;
+}
+
+#badge {
+  height: 60px;
+  width: 200px;
+  line-height: 60px;
+  font-size: 1em;
+  padding: 2px;
+}
+
+/* ############### */
+
+#midButtons {
+  margin: 50px auto;
+}
+
+#midButtons button, #midButtons a {
+  width: 95%;
+  min-width: 90px;
+  height: 55px;
+  font-size: 17px;
+  line-height: 55px;
+  padding: 2px;
+}
+#gap {
+  height: 30px;
+}
+
+#tmpAndPcp {
+  text-align: center;
+}
+
+#apiInfo {
+  padding: 10px 80px;
+}
+
+#tmpPcp {
+  width: 95%;
+  min-width: 280px;
+  height: 55px;
+  font-size: 20px;
+  line-height: 55px;
+  padding: 2px;
+  margin: 2.5%;
+}

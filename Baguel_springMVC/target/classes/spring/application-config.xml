@@ -52,4 +52,5 @@
 	
 	<!-- Bean Package Set -->
 	<context:component-scan base-package="com.project.baguel"/>
+	
 </beans>
