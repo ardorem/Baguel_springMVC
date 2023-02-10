@@ -22,10 +22,7 @@ public class PGetWeatherJson implements IPlaceService {
 	
 	@Override
 	public void execute(Model model) {
-		System.out.println(">> PInsertWeather");
-		Map<String, Object> map = model.asMap();
-		PlaceDTO placeDTO = (PlaceDTO) map.get("placeDTO");
-		String place = placeDTO.getPlace();
+		System.out.println(">> PGetWeatherJson");
 		
 		// SET base_date
 		LocalDateTime now = LocalDateTime.now();
@@ -34,29 +31,38 @@ public class PGetWeatherJson implements IPlaceService {
 		String base_date = null;
 		if(nowTime < 2311) { // API update time
 			base_date = String.valueOf(nowDate - 1);
-			System.out.println("nowDate : " + nowDate);
-			System.out.println("base_date : " + base_date);
 		} else {
-			System.out.println("nowDate : " + nowDate);
 			base_date = String.valueOf(nowDate);
-			System.out.println("base_date : " + base_date);
 		}
 		
 		// SET base_time
 		String base_time = "2300";
 		
-		// SET nx & ny
 		String nx = null; String ny = null;
-		if (place.equals("cGarden")) {
-			nx = "62"; ny = "126"; // 서울 대공원
+		Map<String, Object> map = model.asMap();
+		PlaceDTO placeDTO = (PlaceDTO) map.get("placeDTO");
+		if(placeDTO != null) {
+			System.out.println(placeDTO);
+			String place = placeDTO.getPlace();
+			// SET nx & ny
+			if (place.equals("cGarden")) {
+				nx = "62"; ny = "126"; // 서울 대공원
+			} else {
+				nx = "60"; ny = "127"; // 그 외
+			}
 		} else {
-			nx = "60"; ny = "127"; // 그 외
+			System.out.println(">> placeDTO is null <<");
+			String xy = String.valueOf(map.get("xy"));
+			System.out.println("xy is : " + xy);
+			nx = xy.substring(0, 2);
+			ny = xy.substring(3);
 		}
+		
 		try {
 			StringBuilder urlBuilder = new StringBuilder(
 					"http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst");
 			urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")
-			+ "=BWAa0%2FSVnXgFMSyPeTVEGS5SjoEkMp3omTbFARPTMfDR3rJhlxl3KGWaIVoAmlEHvY4UhFw4X849u%2Bfsxl362A%3D%3D");
+			+ "KEY HERE");
 			urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
 			urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8"));
 			urlBuilder.append("&" + URLEncoder.encode("dataType", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));
@@ -65,13 +71,9 @@ public class PGetWeatherJson implements IPlaceService {
 			urlBuilder.append("&" + URLEncoder.encode("nx", "UTF-8") + "=" + URLEncoder.encode(nx, "UTF-8"));
 			urlBuilder.append("&" + URLEncoder.encode("ny", "UTF-8") + "=" + URLEncoder.encode(ny, "UTF-8"));
 			
-			System.out.println(urlBuilder);
-			
 			URL url = new URL(urlBuilder.toString());
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
-//			conn.setRequestProperty("Content-type", "application/json");
-			System.out.println("Response code: " + conn.getResponseCode());
 			
 			BufferedReader rd;
 			if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
@@ -87,11 +89,9 @@ public class PGetWeatherJson implements IPlaceService {
 			}
 			rd.close();
 			conn.disconnect();
-			System.out.println();
-//		System.out.println(sb.toString());
 			String jsonData = sb.toString();
 			model.addAttribute("jsonData", jsonData);
-			
+			System.out.println("exit weather json");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

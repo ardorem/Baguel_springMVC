@@ -12,50 +12,52 @@
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/cal_list_view.css">
+	  <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<link rel="stylesheet" href="${contextPath}/css/header_footer.css">
+<link rel="stylesheet" href="${contextPath}/css/cal_list_view.css">
 <title>바글</title>
 </head>
 <body>
 	<div id="container">
 		<!-- ****************************************************************************** header & nav start-->
     <header>
-      <a href="${pageContext.request.contextPath}/main" id="logo">
+      <a href="${contextPath}/main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
 			<c:when test="${userLogin eq 'logined' }">
 				${userId }&nbsp;&nbsp;
-				<a href="${pageContext.request.contextPath}/mypage">마이페이지</a>
-				<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+				<a href="${contextPath}/mypage">마이페이지</a>
+				<a href="${contextPath}/logout">로그아웃</a>
 			</c:when>
 			<c:otherwise>
-	      <a href="${pageContext.request.contextPath}/register">회원가입</a>
-				<a href="${pageContext.request.contextPath}/login">로그인</a>
+	      <a href="${contextPath}/register">회원가입</a>
+				<a href="${contextPath}/login">로그인</a>
 			</c:otherwise>
 		</c:choose>
 		</div>
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/srch_station">역으로 조회</a></li>
-            <li><a href="${pageContext.request.contextPath}/srch_place">장소로 조회</a></li>
+            <li><a href="${contextPath}/srch_station">역으로 조회</a></li>
+            <li><a href="${contextPath}/srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="${pageContext.request.contextPath}/cal_view">캘린더</a>
+        <li><a href="${contextPath}/cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/cal_add">일정 등록</a></li>
-            <li><a href="${pageContext.request.contextPath}/cal_list">등록된 일정</a></li>
-            <li><a href="${pageContext.request.contextPath}/cal_view">캘린더 보기</a></li>
+            <li><a href="${contextPath}/cal_view">달력으로 조회</a></li>
+            <li><a href="${contextPath}/cal_add">일정 등록 요청</a></li>
+            <li><a href="${contextPath}/cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="${pageContext.request.contextPath}/map">지도로 보기</a></li>
+        <li><a href="${contextPath}/map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/about">about 바글</a></li>
+            <li><a href="${contextPath}/about">about 바글</a></li>
           </ul>
         </li>
       </ul>
@@ -80,9 +82,31 @@
 
 				<!----------------------------------------------------------------------------------------------- 이벤트 정보 -->
 				<div class="row" id="eventInfo">
-
+					<c:choose>
+						<c:when test="${boardArticle.eventType eq 'show'}">
+							<c:set var="eventType" value="공연(뮤지컬, 연극)"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'sports'}">
+							<c:set var="eventType" value="스포츠 경기"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'concert'}">
+							<c:set var="eventType" value="콘서트"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'localFest'}">
+							<c:set var="eventType" value="지역 축제"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'festival'}">
+							<c:set var="eventType" value="페스티벌"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'exhibition'}">
+							<c:set var="eventType" value="미술전시"/>
+						</c:when>
+						<c:when test="${boardArticle.eventType eq 'etc'}">
+							<c:set var="eventType" value="기타"/>
+						</c:when>
+					</c:choose>
 					<div class="col-md-4" id="infoBadge">
-						<span class="badge text-bg-light">${boardArticle.eventType}</span>
+						<span class="badge text-bg-light">${eventType}</span>
 					</div>
 
 					<div class="col-md-4" id="infoBadge">
@@ -396,7 +420,6 @@
 															id="editBtn" onclick="showedit(${counter })">수정</button>
 													</c:if>
 												</div>
-												<%-- 												<c:if test="${parent.id eq userId}"> --%>
 												<div class="replyBtn">
 													<span class="badge rounded-pill text-bg-secondary"
 														id="countBadge1"><span class="counter"></span> /
@@ -410,13 +433,11 @@
 													<button type="button" class="btn btn-outline-secondary"
 														id="editCancel" onclick="cancelEdit()">취소</button>
 												</div>
-												<%-- 												</c:if> --%>
 												<!---------------------------------------------------- 접속한 유저가 작성한 댓글일 경우 수정 가능 fin.-->
 											</div>
 										</form>
 
 										<!-- **************************************************************************************** reply -->
-										<!--  id="commentTextarea0", count_reply(commentTextarea0.value, 0) -->
 										<div class="row">
 											<form name="" method="post"
 												action="${pageContext.request.contextPath}/add_child_comment">

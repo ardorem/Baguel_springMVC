@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="css/srch_place.css">
 <script>
 	function changeItem() {
-		var daySelect = document.getElementById("daySelect");
+		let daySelect = document.getElementById("daySelect");
 
 		// select element에서 선택된 option의 value
-		var itemID = daySelect.options[daySelect.selectedIndex].value;
+		let itemID = daySelect.options[daySelect.selectedIndex].value;
 		console.log('itemID: ' + itemID);
 		if(itemID == "${todayV }") {
 			document.getElementById("hiddenDay").innerHTML = "<input type='hidden' name='day' value='${todayDay }'><input type='hidden' name='selectDate' value='${today }'>";
@@ -28,10 +28,10 @@
 	}
 	
 	function changeXy() {
-		var placeSelect = document.getElementById("placeSelect");
+		let placeSelect = document.getElementById("placeSelect");
 
 		// select element에서 선택된 option의 value
-		var placeID = placeSelect.options[placeSelect.selectedIndex].value;
+		let placeID = placeSelect.options[placeSelect.selectedIndex].value;
 		console.log('placeID: ' + placeID);
 		if(placeID == "cGarden") {
 			document.getElementById("hiddenXy").innerHTML = "<input type='hidden' name='xy' value='62_126'>";
@@ -49,6 +49,7 @@
     <header>
       <a href="main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
@@ -66,20 +67,20 @@
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
             <li><a href="srch_station">역으로 조회</a></li>
             <li><a href="srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view">캘린더</a>
+        <li><a href="cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="cal_list">등록된 일정</a></li>
-            <li><a href="cal_view">캘린더 보기</a></li>
+            <li><a href="cal_view">달력으로 조회</a></li>
+            <li><a href="cal_add">일정 등록 요청</a></li>
+            <li><a href="cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="map">지도로 보기</a></li>
+        <li><a href="map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
             <li><a href="about">about 바글</a></li>
@@ -96,7 +97,7 @@
       </div>
 
       <div class="container" id="mainContent">
-        <form class="row" action="result_place" method="get">
+        <form class="row" action="result_place" method="get" id="placeSrchFrm">
           <div class="col-md-6" id="srchForm">
             <h3 class="fw-semibold">날짜 선택</h3>
             
@@ -104,7 +105,7 @@
 						<div id="hiddenXy"></div>
 						
             <select size="1" name="fcstDate" id="daySelect" onchange="changeItem()">
-              <option value="" selected id="selected" >날짜를 선택해 주세요</option>
+              <option value="none" selected id="selected" >날짜를 선택해 주세요</option>
               <option value="${todayV }">
               	${today } (오늘)
               	<c:if test="${todayDay eq 1 }"> (일)</c:if>
@@ -153,7 +154,7 @@
           </div>
 
           <div class="col-md-1" id="buttonArea">
-            <button id="searchIcon" type="submit">
+            <button id="searchIcon" type="button" onclick="placeSrchConfirm()">
               <img id="btnimg" src="images/search.png">
             </button>
           </div>
@@ -239,7 +240,7 @@
     </footer>
     <!-- ************************************************************************ footer end -->
   </div>
-
+  <script src="js/srch_place.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>

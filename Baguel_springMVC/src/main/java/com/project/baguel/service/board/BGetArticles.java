@@ -30,7 +30,6 @@ public class BGetArticles implements IBoardService {
 		ArrayList<BoardDTO> articles = new ArrayList<BoardDTO>();
 		
 		articles = iBoardRepository.getArticles(minArticle, maxArticle);
-		System.out.println(articles);
 		model.addAttribute("articles", articles);
 	}
 

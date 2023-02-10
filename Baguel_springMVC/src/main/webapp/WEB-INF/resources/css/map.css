@@ -6,16 +6,17 @@ main {
   margin-bottom: 300px;
 }
 
-#mainTitleUser p {
-  display: block;
-  font-size: 30px;
-  padding: 10px;
-  text-align: center;
-  max-width: 1000px;
-  margin: 60px auto;
-  background: rgba(102, 102, 102, 0.288);
-  border-radius: 10px;
+#mapMain {
+  width: 90%;
+  margin: 50px auto;
 }
+
+#mapInfo {
+  width: 70%;
+  min-width: 530px;
+  margin: 0px auto;
+}
+
 
 #colorBar {
   display: flex;
@@ -23,6 +24,7 @@ main {
   align-items: center;
   margin: 30px auto;
 }
+
 #colorName {
   margin: 5px;
   width: 60px;
@@ -37,24 +39,60 @@ main {
   font-size: 20px;
   text-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.521);
 }
+
 #colorBar div:nth-child(1) {
   background: #0934E6;
 }
+
 #colorBar div:nth-child(2) {
   background: #127E3B;
 }
+
 #colorBar div:nth-child(3) {
   background: #FFA800;
 }
+
 #colorBar div:nth-child(4) {
   background: #C20000;
 }
 
 #map {
-  width: 100%;
-  height: 700px;
+  min-width: 340px;
+  margin: 10px auto;
+  height: 800px;
+}
+
+/* ############## MAP START */
+/* GMap infowindow X버튼 지우기 */
+button.gm-ui-hover-effect {
+  visibility: hidden;
 }
 
 
+.gm-style .gm-style-iw-c {
+  background-color: rgba(0, 0, 0, 0.692) !important;
+  color: white;
+  padding: 5px !important;
+  text-align: center !important;
+  font-size: 2em !important;
+  width: 300px;
+  min-height: 100px;
+  padding: 10px 3px !important;
+}
 
+/* scroll bar at the info window */
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
+  display: none;
+}
+
+/* arrow at the bottom */
+.gm-style .gm-style-iw-tc::after {
+  background-color: rgba(0, 0, 0, 0.692) !important;
+}
+.emphasis {
+  color: #74e609;
+  font-size: 1.3em;
+  font-weight: 800;
+}
 /* ##################  main end ################## */

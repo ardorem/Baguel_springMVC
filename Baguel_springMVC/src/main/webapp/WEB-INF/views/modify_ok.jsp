@@ -7,8 +7,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register_ok.css">
+  <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+  <link rel="stylesheet" href="${contextPath}/css/header_footer.css">
+  <link rel="stylesheet" href="${contextPath}/css/register_ok.css">
   <title>바글</title>
 </head>
 
@@ -16,42 +17,43 @@
   <div id="container">
     <!-- ****************************************************************************** header & nav start-->
     <header>
-      <a href="${pageContext.request.contextPath}/main" id="logo">
+      <a href="${contextPath}/main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
 			<c:when test="${userLogin eq 'logined' }">
 				${userId }&nbsp;&nbsp;
-				<a href="${pageContext.request.contextPath}/mypage">마이페이지</a>
-				<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+				<a href="${contextPath}/mypage">마이페이지</a>
+				<a href="${contextPath}/logout">로그아웃</a>
 			</c:when>
 			<c:otherwise>
-	      <a href="${pageContext.request.contextPath}/register">회원가입</a>
-				<a href="${pageContext.request.contextPath}/login">로그인</a>
+	      <a href="${contextPath}/register">회원가입</a>
+				<a href="${contextPath}/login">로그인</a>
 			</c:otherwise>
 		</c:choose>
 		</div>
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/srch_station">역으로 조회</a></li>
-            <li><a href="${pageContext.request.contextPath}/srch_place">장소로 조회</a></li>
+            <li><a href="${contextPath}/srch_station">역으로 조회</a></li>
+            <li><a href="${contextPath}/srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="${pageContext.request.contextPath}/cal_view">캘린더</a>
+        <li><a href="${contextPath}/cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/cal_add">일정 등록</a></li>
-            <li><a href="${pageContext.request.contextPath}/cal_list">등록된 일정</a></li>
-            <li><a href="${pageContext.request.contextPath}/cal_view">캘린더 보기</a></li>
+            <li><a href="${contextPath}/cal_view">달력으로 조회</a></li>
+            <li><a href="${contextPath}/cal_add">일정 등록 요청</a></li>
+            <li><a href="${contextPath}/cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="${pageContext.request.contextPath}/map">지도로 보기</a></li>
+        <li><a href="${contextPath}/map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
-            <li><a href="${pageContext.request.contextPath}/about">about 바글</a></li>
+            <li><a href="${contextPath}/about">about 바글</a></li>
           </ul>
         </li>
       </ul>

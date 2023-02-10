@@ -21,15 +21,12 @@ public class PCalcVisitors implements IPlaceService {
 		float precipitation = Float.valueOf(placeResult.getPrecipitation());
 		String place = placeDTO.getPlace();
 		String day = placeDTO.getDay();
-		System.out.println(">>> place");
 		int dayType = 0;
 		
 		if (day.equals("1") || day.equals("7")) {
-			System.out.println("주말");
-			dayType = 2;
+			dayType = 2; // 주말
 		} else {
-			System.out.println("평일");
-			dayType = 1;
+			dayType = 1; // 평일
 		}
 		
 		int visitorsInt = 0;
@@ -55,8 +52,8 @@ public class PCalcVisitors implements IPlaceService {
 			visitorsInt = (int) (929.97 + 1633.65 * dayType + 25.52 * avgTemp);
 		}
 		visitors = decFormat.format(visitorsInt);
-		
-		model.addAttribute("visitors", visitors);
+		placeDTO.setVisitors(visitors);
+		model.addAttribute("placeDTO", placeDTO);
 	}
 
 }

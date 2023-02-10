@@ -20,3 +20,9 @@ FROM PLACE_WEATHER
 WHERE place = '경복궁'AND fcstDate = '20230122';
 
 drop table place_weather;
+
+CREATE TABLE PLACE (
+		placeCode VARCHAR2(20) NOT NULL PRIMARY KEY, --1 sema
+    placeName VARCHAR2(50) NOT NULL, --2 서울 시립 미술관
+    xy VARCHAR2(10) NOT NULL --3 20230305
+);

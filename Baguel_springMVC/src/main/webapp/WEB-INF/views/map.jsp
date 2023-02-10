@@ -6,17 +6,67 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=devi
+  ce-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/header_footer.css">
   <link rel="stylesheet" href="css/map.css">
   <!-- 맵api 관련 js start-->
   <script defer src="js/map.js"></script>
   <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs_w9gQDXra9aXhO8JeUy0Rzeqv_8Cb5I
-    &callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=KEY HERE&callback=initMap"></script>
   <!-- 맵api 관련 js end-->
   <title>바글</title>
+  <script>
+    const pin_line1 = [
+			<c:forEach items="${line1 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line2 = [
+			<c:forEach items="${line2 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line3 = [
+			<c:forEach items="${line3 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line4 = [
+			<c:forEach items="${line4 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line5 = [
+			<c:forEach items="${line5 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line6 = [
+			<c:forEach items="${line6 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line7 = [
+			<c:forEach items="${line7 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    const pin_line8 = [
+			<c:forEach items="${line8 }" var="line">
+			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: ${line.err}, url: "main" },
+			</c:forEach>
+    ];
+    
+    const pin_place = [
+		<c:forEach items="${places }" var="place">
+			<c:set var="url" value="${pageContext.request.contextPath}/result_place?day=${day }&selectDate=${selectDate }&xy=${place.xy }&fcstDate=${fcstDate }&place=${place.place }"/>
+      { label: "P", placeName: "${place.placeName }", lat: ${place.lat }, lng: ${place.lng }, tmp: '${place.avgTemp}', pcp: '${place.precipitation}',visitors: '${place.visitors }', url: "${url}" },
+     </c:forEach>
+    ];
+  </script>
 </head>
 
 <body>
@@ -25,6 +75,7 @@
     <header>
       <a href="main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
@@ -42,20 +93,20 @@
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
             <li><a href="srch_station">역으로 조회</a></li>
             <li><a href="srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view">캘린더</a>
+        <li><a href="cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="cal_list">등록된 일정</a></li>
-            <li><a href="cal_view">캘린더 보기</a></li>
+            <li><a href="cal_view">달력으로 조회</a></li>
+            <li><a href="cal_add">일정 등록 요청</a></li>
+            <li><a href="cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="map">지도로 보기</a></li>
+        <li><a href="map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
             <li><a href="about">about 바글</a></li>
@@ -67,19 +118,32 @@
 
     <!-- ******************************************************************************main start -->
     <main>
+      <div class="row" id="mapMain">
+        <div class="col-12">
+          <div id="mainTitleUser">
+            <h1 class="fw-semibold" style="margin-bottom: 50px;">지도로 조회</h1>
+          </div>
+        </div>
+        <div class="col-12" id="mapInfo">
+          <div class="alert alert-success text-center shadow-sm" role="alert">
+            <p class="fs-3 mb-0">예측 기준일 : <span class="badge text-bg-warning">2022년 02월 05일(오늘)</span></p>
+          </div>
+          <div class="alert alert-info text-center shadow-sm" role="alert">
+            <p class="fs-4 mb-0">☑ <span class="fw-semibold">핀에 마우스를 올리면</span> 예측 정보를 확인할 수 있습니다.</p>
+            <p class="fs-4 mb-0">☑ <spna class="fw-semibold">핀을 클릭하면</spna> 상세 정보 페이지로 이동합니다</p>
+          </div>
+        </div>
 
-      <div id="mainTitleUser">
-        <h1>지도로 보기</h1>
-        <p>오늘의 예측 인구밀도를<br>원할 - 보통 - 붐빔 - 혼잡 4단계로 나타냅니다.<br>
-        </p>
+        <!-- <div id="colorBar">
+          <div id="colorName">원할</div>
+          <div id="colorName">보통</div>
+          <div id="colorName">붐빔</div>
+          <div id="colorName">혼잡</div>
+        </div> -->
+        <div class="co1-12 shadow">
+          <div id="map"></div>
+        </div>
       </div>
-      <div id="colorBar">
-        <div id="colorName">원할</div>
-        <div id="colorName">보통</div>
-        <div id="colorName">붐빔</div>
-        <div id="colorName">혼잡</div>
-      </div>
-      <div id="map"></div>
     </main>
 
 
@@ -115,6 +179,9 @@
     </footer>
     <!-- ************************************************************************ footer end -->
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

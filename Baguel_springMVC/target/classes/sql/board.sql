@@ -11,14 +11,14 @@ CREATE TABLE board (
     adminMSG VARCHAR2(1200),--10 한글 띄어쓰기 없이 400자 가능
     userId VARCHAR2(20) NOT NULL,--11
     viewcount INT DEFAULT 0,--12
-    approval CHAR(1) CONSTRAINT board_approval_CK CHECK(approval IN ('0', '1')),--13(1: 처리완료 / 0: 처리전)
+  	CONSTRAINT board_approval_CK CHECK(approval IN ('0', '1')),--13(1: 처리완료 / 0: 처리전)
     status CHAR(1) CONSTRAINT board_status_CK CHECK(status IN ('0', '1'))--14(1: 정상 / 0: 삭제된 게시물)
     
 --    CONSTRAINT FK_ID FOREIGN KEY(ID)
 --    REFERENCES members(ID) -- 외래키 지정(MEMBERS에 ID가 없으면 INSERT 되지 않음)
 );
 
-CREATE SEQUENCE board_seq
+CREATE SEQUENCE board_seq 
 START WITH 1
 INCREMENT BY 1
 ORDER; --요청 순서로 값을 생성

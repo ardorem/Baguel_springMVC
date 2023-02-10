@@ -68,7 +68,6 @@ public class GetPastPlaceData implements IPlacePastService {
 		} else if (place.equals("sema")) {
 			pastData = iPLacePastRepository.getSemaData(baseDate);
 		}
-		System.out.println(pastData);
 		model.addAttribute("pastData", pastData);
 	}
 

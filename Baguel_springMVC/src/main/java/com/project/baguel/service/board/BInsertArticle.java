@@ -29,8 +29,6 @@ public class BInsertArticle implements IBoardService {
 		String userId = boardDTO.getUserId();
 		
 		iBoardRepository.insertArticle(eventFrom, eventTo, eventPlace, eventType, event, eventDesc, userId);
-//		model.addAttribute("eventPlace", eventPlace);
-//		model.addAttribute("event", event);
 	}
 
 }

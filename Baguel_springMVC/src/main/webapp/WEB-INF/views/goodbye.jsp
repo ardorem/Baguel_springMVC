@@ -17,6 +17,7 @@
     <header>
       <a href="main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
@@ -34,20 +35,20 @@
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
             <li><a href="srch_station">역으로 조회</a></li>
             <li><a href="srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view">캘린더</a>
+        <li><a href="cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="cal_list">등록된 일정</a></li>
-            <li><a href="cal_view">캘린더 보기</a></li>
+            <li><a href="cal_view">달력으로 조회</a></li>
+            <li><a href="cal_add">일정 등록 요청</a></li>
+            <li><a href="cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="map">지도로 보기</a></li>
+        <li><a href="map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
             <li><a href="about">about 바글</a></li>

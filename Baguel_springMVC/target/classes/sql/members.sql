@@ -23,7 +23,7 @@ START WITH 1
 INCREMENT BY 1
 ORDER; --요청 순서로 값을 생성
 
-INSERT INTO members VALUES('user001', 'user001PW!!', '문인기', 'Moon', 'moon@mial.com', '22/11/22', members_seq.nextval, '1');
+INSERT INTO members VALUES('master', 'master1234', '마스터', 'MASTER', 'master@mail.com', '23/01/30', members_seq.nextval, '1');
 
 -- 비밀번호 찾기(변경)
 UPDATE members

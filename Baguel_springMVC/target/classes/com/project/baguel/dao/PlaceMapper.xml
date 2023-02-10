@@ -10,7 +10,15 @@
 		<result property="avgTemp" column="avgTemp" />
 		<result property="precipitation" column="precipitation" />
 	</resultMap>
-
+	
+	<resultMap type="com.project.baguel.model.PlaceDTO" id="getPlacesList">
+		<result property="place" column="place" />
+		<result property="placeName" column="placeName" />
+		<result property="lat" column="lat" />
+		<result property="lng" column="lng" />
+		<result property="xy" column="xy" />
+	</resultMap>
+	
 	<insert id="insertWeather">
 		INSERT INTO place_weather
 		VALUES(#{xy}, #{fcstDate}, #{avgTemp}, #{precipitation}, TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'))
@@ -22,4 +30,20 @@
 		WHERE xy = #{xy} AND fcstDate = #{fcstDate}
 	</select>
 	
+	<select id="checkWeatherData" resultType="int">
+		SELECT count(*)
+		FROM place_weather
+		WHERE xy = #{xy} AND fcstDate = #{fcstDate}
+	</select>
+	
+	<select id="getPlaces" resultMap="getPlacesList">
+		SELECT *
+		FROM places
+	</select>
+	
+	<select id="getXys" resultType="String">
+		SELECT xy
+		FROM places
+		GROUP BY xy
+	</select>
 </mapper>

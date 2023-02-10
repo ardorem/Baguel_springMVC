@@ -20,12 +20,10 @@ public class PGetWeather implements IPlaceService {
 		System.out.println(">> PGetWeather");
 		Map<String, Object> map = model.asMap();
 		PlaceDTO placeDTO = (PlaceDTO) map.get("placeDTO");
-		String place = placeDTO.getPlace();
 		String fcstDate = placeDTO.getFcstDate();
 		
 		int result = 0;
-		System.out.println("place is " + place);
-		System.out.println("fcstDate" + fcstDate);
+		System.out.println("fcstDate : " + fcstDate);
 		String xy = placeDTO.getXy();
 		
 		PlaceDTO placeResult = iPlaceRepository.getWeather(xy, fcstDate);

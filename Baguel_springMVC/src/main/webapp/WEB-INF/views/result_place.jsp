@@ -14,10 +14,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  
   <title>바글</title>
-  <!-- <script>
-    var myCarousel = document.querySelector('#myCarousel')
-    var carousel = new bootstrap.Carousel(myCarousel)
-  </script> -->
 </head>
 
 <body>
@@ -26,6 +22,7 @@
     <header>
       <a href="main" id="logo">
         <p>바글🚶‍♂️🚶🚶‍♀️</p>
+        <div id="logoSmall">서울 주요지역 혼잡 예측 서비스</div>
       </a>
       <div id="loginMenu">
 		<c:choose>
@@ -43,20 +40,20 @@
     </header>
     <nav>
       <ul id="navi">
-        <li><a href="#">조회</a>
+        <li><a href="#">혼잡 예측</a>
           <ul>
             <li><a href="srch_station">역으로 조회</a></li>
             <li><a href="srch_place">장소로 조회</a></li>
           </ul>
         </li>
-        <li><a href="cal_view">캘린더</a>
+        <li><a href="cal_view">달력으로 조회</a>
           <ul>
-            <li><a href="cal_add">일정 등록</a></li>
-            <li><a href="cal_list">등록된 일정</a></li>
-            <li><a href="cal_view">캘린더 보기</a></li>
+            <li><a href="cal_view">달력으로 조회</a></li>
+            <li><a href="cal_add">일정 등록 요청</a></li>
+            <li><a href="cal_list">요청된 일정</a></li>
           </ul>
         </li>
-        <li><a href="map">지도로 보기</a></li>
+        <li><a href="map">지도로 조회</a></li>
         <li><a href="#">이용 안내</a>
           <ul>
             <li><a href="about">about 바글</a></li>
@@ -130,7 +127,7 @@
             <h1 class="fw-bold text-center lh-lg">
               ${selectDate } ${day }요일<br>
               ${place }의 예상 관람객은<br>
-              <span class="badge text-bg-success" id="badge">${visitors }명</span> 입니다.
+              <span class="badge text-bg-success" id="badge">${placeDTO.visitors }명</span> 입니다.
             </h1>
 					
           </div>
@@ -154,7 +151,7 @@
         <div class="row" id="midButtons">
           <div class="col-6"></div>
           <div class="col-3">
-            <a href="srch_place.html" class="btn btn-outline-secondary">뒤로가기</a>
+            <a href="srch_place" class="btn btn-outline-secondary">다른 조건 검색하기</a>
           </div>
           <div class="col-3">
           <c:choose>
@@ -186,9 +183,14 @@
         </div>
         
         <div class="row">
-	        <div class="collapse col-12" id="collapseExample">
-        		<h2>2019-01 관람객 수</h2>
-        		<h5>* 2021, 2020년 데이터는 코로나로 인한 관람객 감소로 제외 되었습니다. *</h5>
+					<div class="collapse col-12" id="collapseExample">
+	        		<h2>2019-${month } 관람객 수</h2>
+	        		<h5>* 2021, 2020년 데이터는 코로나로 인한 관람객 감소로 제외 되었습니다. *</h5>
+						<div class="card card-body">
+							<canvas id="myChart"></canvas> <!-- CHART HERE-->
+						</div>
+					</div>
+					<div class="collapse col-12" id="collapseExample">
 						<table class="table table-hover text-center">
 							<tr>
 							<th>날짜</th>
@@ -216,10 +218,7 @@
 						</table>
 					</div>
           <div class="collapse col-12" id="collapseExample">
-            <div class="card card-body">
-                <!--차트가 그려질 부분-->
-                <canvas id="myChart"></canvas>
-            </div>
+            <button type="button" id="upToTop" class="btn btn-dark"onclick="window.scrollTo(0, 0);">👆</button>
           </div>
         </div>
       </div> <!-- container -->

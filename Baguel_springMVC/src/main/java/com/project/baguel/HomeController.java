@@ -43,10 +43,4 @@ public class HomeController {
 		return "cal_view";
 	}
 	
-	@RequestMapping("map")
-	public String mapNevigate() {
-		System.out.println("> Controller → mapNevigate");
-		return "map";
-	}
-	
 }

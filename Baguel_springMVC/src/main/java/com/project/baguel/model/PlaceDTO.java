@@ -11,10 +11,16 @@ import lombok.Setter;
 @Setter
 public class PlaceDTO {
 	private String place;
+	private String placeName;
 	private String fcstDate;
 	private String avgTemp;
 	private String precipitation;
 	private String inputDate;
 	private String day;
 	private String xy;
+	private String visitors;
+	
+	private String lng;
+	private String lat;
+	
 }
