@@ -14,6 +14,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cal_list_view.css">
+<link rel="icon" href="${contextPath}/images/favicon.png">
 <title>바글</title>
 </head>
 <body>
@@ -507,12 +508,12 @@
 		<!-- ******************************************************************************footer start -->
 		<footer>
 			<div id="bottomMenu">
-				<ul>
-					<li><a href="#">회사 소개</a></li>
-					<li><a href="#">개인정보처리방침</a></li>
-					<li><a href="#">이용약관</a></li>
-					<li><a href="#">사이트맵</a></li>
-				</ul>
+        <ul id="footprint">
+          <li>팀 프로젝트</li>
+          <li>문인기 / moonpop6@daum.net</li>
+          <li>변예진 / byejin.9738@gmail.com</li>
+          <li>2022 - 2023</li>
+        </ul>
 				<div id="sns">
 					<ul>
 						<li><a href="#"><img src="images/sns-1.png"></a></li>

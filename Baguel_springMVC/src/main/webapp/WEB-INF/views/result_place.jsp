@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/header_footer.css">
   <link rel="stylesheet" href="css/srch_place.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
+   <link rel="icon" href="images/favicon.png">
   <title>바글</title>
 </head>
 
@@ -228,11 +228,11 @@
     <!-- ******************************************************************************footer start -->
     <footer>
       <div id="bottomMenu">
-        <ul>
-          <li><a href="#">회사 소개</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">사이트맵</a></li>
+        <ul id="footprint">
+          <li>팀 프로젝트</li>
+          <li>문인기 / moonpop6@daum.net</li>
+          <li>변예진 / byejin.9738@gmail.com</li>
+          <li>2022 - 2023</li>
         </ul>
         <div id="sns">
           <ul>
@@ -258,11 +258,13 @@
 		  var labels1 = [];
 		  var visitors = [];
 		  var tmps = [];
+		  
 	  <c:forEach items="${pastData }" var="past" varStatus="status">
 		  labels1.push('${status.index +1}');
 		  visitors.push(${past.place });
 		  tmps.push(${past.tmp });
 	  </c:forEach>
+	  
 		</script>
   <script>
     var context = document

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.project.baguel.common.filter.SessionConfig;
 import com.project.baguel.model.MemberDTO;
 import com.project.baguel.service.member.*;
 
@@ -107,11 +108,22 @@ public class MController {
 				out.println("alert(\"존재하지 않는 회원입니다.\");");
 				out.println("history.back();");
 				out.println("</script>");
-				return "home";
+				return "login";
 			} else {
-				session.setAttribute("userLogin", "logined");
-				session.setAttribute("userId", loginMember.getUserId());
-				session.setAttribute("userNick", loginMember.getUserNick());
+				boolean isAlreayLogined = SessionConfig.getSessionidCheck("userId", loginMember.getUserId());
+				System.out.println("isAlreayLogined result : " + isAlreayLogined);
+				if(isAlreayLogined == true) {
+					out.println("<script>");
+					out.println("alert(\"이미 로그인된 회원입니다.\");");
+					out.println("history.back();");
+					out.println("</script>");
+					out.flush();
+					return "login";
+				} else if(isAlreayLogined == false) {
+					session.setAttribute("userLogin", "logined");
+					session.setAttribute("userId", loginMember.getUserId());
+					session.setAttribute("userNick", loginMember.getUserNick());
+				}
 				return "login_ok";
 			}
 		}

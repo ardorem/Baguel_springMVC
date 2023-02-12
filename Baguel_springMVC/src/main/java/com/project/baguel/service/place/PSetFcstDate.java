@@ -35,16 +35,9 @@ public class PSetFcstDate implements IPlaceService {
 		String selectDateStation = sdf4.format(cal.getTime());
 		String day = String.valueOf(cal.get(Calendar.DAY_OF_WEEK)); // 요일
 
-		System.out.println(selectDate);
-		System.out.println(fcstDate);
-		System.out.println(today);
-		System.out.println(day);
-		System.out.println("selectDateStation : " + selectDateStation);
-
 		model.addAttribute("selectDate", selectDate);
 		model.addAttribute("fcstDate", fcstDate);
 		model.addAttribute("day", day);
-		model.addAttribute("today", today);
 		model.addAttribute("today", today);
 		model.addAttribute("selectDateStation", selectDateStation);
 		

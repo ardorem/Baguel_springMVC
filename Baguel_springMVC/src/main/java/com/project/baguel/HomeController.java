@@ -1,13 +1,16 @@
 package com.project.baguel;
 
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -41,6 +44,18 @@ public class HomeController {
 	public String calViewNevigate() {
 		System.out.println("> Controller → calViewNevigate");
 		return "cal_view";
+	}
+	
+	@ExceptionHandler({SQLException.class, DataAccessException.class})
+	public String errorException() {
+		System.out.println("> Controller → errorException");
+		return "error";
+	}
+	
+	@RequestMapping("error")
+	public String errorNevigate() {
+		System.out.println("> Controller → error");
+		return "error";
 	}
 	
 }

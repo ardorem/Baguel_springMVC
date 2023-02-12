@@ -16,6 +16,12 @@
 		</listener-class>
 	</listener>
 
+	<!-- already login check -->
+	<listener>
+		<listener-class>com.project.baguel.common.filter.SessionConfig
+		</listener-class>
+	</listener>
+
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
@@ -49,4 +55,19 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+		<error-page>
+		<error-code>404</error-code>
+		<location>/error</location>
+	</error-page>
+
+	<error-page>
+		<error-code>405</error-code>
+		<location>/error</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error</location>
+	</error-page>
 </web-app>

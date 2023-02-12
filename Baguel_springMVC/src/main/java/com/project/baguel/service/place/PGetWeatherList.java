@@ -30,7 +30,6 @@ public class PGetWeatherList implements IPlaceService {
 			place.setPrecipitation(placeResult.getPrecipitation());
 		}
 		model.addAttribute("places", places);
-		System.out.println(">> PGetWeatherList EXIT");
 	}
 
 }

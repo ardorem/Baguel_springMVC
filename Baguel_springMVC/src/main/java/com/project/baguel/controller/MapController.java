@@ -51,8 +51,8 @@ public class MapController {
 	IMapService mGetAllErr;
 	
 	@RequestMapping("map")
-	public String tester(Model model) {
-		System.out.println("> Controller → tester");
+	public String showMap(Model model) {
+		System.out.println("> Controller → showMap");
 //		- 모든 장소 데이터 받아오기 ArrayList
 		pGetPlaces.execute(model);
 		

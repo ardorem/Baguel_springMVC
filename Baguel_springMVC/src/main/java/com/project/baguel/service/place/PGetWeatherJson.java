@@ -62,7 +62,7 @@ public class PGetWeatherJson implements IPlaceService {
 			StringBuilder urlBuilder = new StringBuilder(
 					"http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst");
 			urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")
-			+ "KEY HERE");
+			+ "=BWAa0%2FSVnXgFMSyPeTVEGS5SjoEkMp3omTbFARPTMfDR3rJhlxl3KGWaIVoAmlEHvY4UhFw4X849u%2Bfsxl362A%3D%3D");
 			urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
 			urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8"));
 			urlBuilder.append("&" + URLEncoder.encode("dataType", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));

@@ -12,6 +12,7 @@
 <!--   <link rel="stylesheet" href="css/modify.css"> -->
  <script src="js/members.js"></script>
   <title>바글</title>
+    <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
@@ -148,12 +149,12 @@
             
             <li><input type="button" value="회원정보 수정" onclick="updateInfoConfirm()"><br></li>
             <li id="space"></li>
-            <input type="button" value="취소" onclick="mypage">
+            <li><input type="button" value="취소" onclick="location.href='mypage'"></li>
             <li id="space"></li>
             <li id="space"></li>
             <li id="space"></li>
             <li id="space"></li>
-            <input type="button" value="회원 탈퇴" onclick="deactive()">
+            <li><input type="button" value="회원 탈퇴" onclick="deactive()"></li>
           </ul>
         </form>
       </div>
@@ -166,11 +167,11 @@
     <!-- ******************************************************************************footer start -->
     <footer>
       <div id="bottomMenu">
-        <ul>
-          <li><a href="#">회사 소개</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">사이트맵</a></li>
+        <ul id="footprint">
+          <li>팀 프로젝트</li>
+          <li>문인기 / moonpop6@daum.net</li>
+          <li>변예진 / byejin.9738@gmail.com</li>
+          <li>2022 - 2023</li>
         </ul>
         <div id="sns">
           <ul>

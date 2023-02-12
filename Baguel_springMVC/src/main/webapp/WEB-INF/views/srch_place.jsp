@@ -11,6 +11,7 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="css/header_footer.css">
   <link rel="stylesheet" href="css/srch_place.css">
+    <link rel="icon" href="images/favicon.png">
 <script>
 	function changeItem() {
 		let daySelect = document.getElementById("daySelect");
@@ -159,8 +160,18 @@
             </button>
           </div>
         </form>
-
-        <div class="row">
+        
+				<div class="row">
+					<div class="col-12">
+						<div class="alert alert-success fs-5" role="alert">
+							<span class="fw-bold">기상청 단기예보</span>로 날씨 조회가 가능한 <span
+								class="text-decoration-underline"> 오늘, 내일, 내일모래 </span><span
+								class="fw-bold">3일</span> 예측 가능
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
           <div class="col-12" id="carousel">
             <div class="placePhoto">
               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -214,11 +225,11 @@
     <!-- ******************************************************************************footer start -->
     <footer>
       <div id="bottomMenu">
-        <ul>
-          <li><a href="#">회사 소개</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">사이트맵</a></li>
+        <ul id="footprint">
+          <li>팀 프로젝트</li>
+          <li>문인기 / moonpop6@daum.net</li>
+          <li>변예진 / byejin.9738@gmail.com</li>
+          <li>2022 - 2023</li>
         </ul>
         <div id="sns">
           <ul>

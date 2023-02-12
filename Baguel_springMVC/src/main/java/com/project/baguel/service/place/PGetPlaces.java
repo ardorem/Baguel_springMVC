@@ -22,7 +22,6 @@ public class PGetPlaces implements IPlaceService {
 		ArrayList<PlaceDTO> places = new ArrayList<PlaceDTO>();
 		
 		places = iPlaceRepository.getPlaces();
-		System.out.println(places.size());
 		model.addAttribute("places", places);
 	}
 

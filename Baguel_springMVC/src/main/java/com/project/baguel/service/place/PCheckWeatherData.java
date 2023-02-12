@@ -19,12 +19,12 @@ public class PCheckWeatherData implements IPlaceService {
 		System.out.println(">> PCheckWeatherData");
 		Map<String, Object> map = model.asMap();
 		String xy = String.valueOf(map.get("xy"));
+		System.out.println("check weather data for " + xy);
 		String fcstDate = String.valueOf(map.get("fcstDate"));
 		
 		int result = iPlaceRepository.checkWeatherData(xy, fcstDate);
-			
+		
 		model.addAttribute("result", result);
-		System.out.println(">> PCheckWeatherData EXIT");
 	}
 
 }
