@@ -7,8 +7,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register_ok.css">
+    <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+  <link rel="stylesheet" href="${contextPath}/css/header_footer.css">
+  <link rel="stylesheet" href="${contextPath}/css/register_ok.css">
   <link rel="icon" href="${contextPath}/images/favicon.png">
   <title>바글</title>
 </head>
@@ -85,9 +86,9 @@
         </ul>
         <div id="sns">
           <ul>
-						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-1.png"></a></li>
-						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-2.png"></a></li>
-						<li><a href="#"><img src="${pageContext.request.contextPath}/images/sns-3.png"></a></li>
+						<li><a href="#"><img src="${contextPath}/images/sns-1.png"></a></li>
+						<li><a href="#"><img src="${contextPath}/images/sns-2.png"></a></li>
+						<li><a href="#"><img src="${contextPath}/images/sns-3.png"></a></li>
             <li></li>
           </ul>
         </div>

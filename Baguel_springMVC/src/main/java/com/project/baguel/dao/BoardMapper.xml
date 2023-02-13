@@ -32,6 +32,15 @@
 		<result property="approval" column="approval" />
 		<result property="userNick" column="userNick" />
 	</resultMap>
+	
+	<resultMap type="com.project.baguel.model.BoardDTO"
+		id="getEvents">
+		<result property="eventFrom" column="eventFrom" />
+		<result property="eventTo" column="eventTo" />
+		<result property="event" column="event" />
+		<result property="eventPlace" column="eventPlace" />
+		<result property="eventType" column="eventType" />
+	</resultMap>
 
 	<select id="countArticles" resultType="int">
 		SELECT count(event) COUNT
@@ -91,5 +100,13 @@
 	<update id="deactiveArticle">
 		UPDATE board SET status='0' WHERE boardNum = #{boardNum}
 	</update>
+	
+	<select id="getEvents" resultMap="getEvents">
+		SELECT eventFrom, eventTo, event, eventPlace, eventType
+		FROM board
+		WHERE eventFrom BETWEEN TO_CHAR(SYSDATE - 133, 'YYYY-MM-DD')
+ 		AND TO_CHAR(SYSDATE + 133, 'YYYY-MM-DD')
+ 		AND status = '1' AND approval = '1'
+	</select>
 	
 </mapper>

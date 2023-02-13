@@ -36,29 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initialView: 'dayGridMonth',
     editable: true,
     selectable: true,
-    events: [
-      {
-        title: '(국립중앙박물관)합스부르크 600년, 매혹의 걸작들 - 빈미술사박물관 특별전',
-        start: '2022-10-15',
-        end: '2022-11-02',
-        constraint: 'businessHours',
-        color: 'black'
-      },
-      {
-        title: '(서울 시립미술관)키키 스미스 ― 자유낙하전',
-        start: '2022-11-22',
-        end: '2022-12-02',
-        constraint: 'businessHours',
-        color: 'blue'
-      },
-      {
-        start: '2022-11-22',
-        end: '2022-11-25',
-        overlap: false,
-        display: 'background',
-        color: 'yellow'
-      },
-    ]
+    events: inputEvents // 보여 줄 이벤트 
   });
   calendar.render();
   //******************************************** 클릭 이벤트 start
@@ -67,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }); //이벤트 클릭
 
   calendar.on('dateClick', function (info) {
-    console.log('clicked on ' + info.dateStr);
+    let eventFrom = info.dateStr;
     // alert("날짜 칸에 클릭");
     eventWrite = confirm(info.dateStr + "에 이벤트를 등록 하시겠어요?");
     if (eventWrite) {
-      window.location.href = 'cal_add.html';
+      window.location.href = 'cal_add?eventFrom='+eventFrom;
     }
   }); //
   //******************************************** 클릭 이벤트 start

@@ -24,24 +24,35 @@ INCREMENT BY 1
 ORDER; --요청 순서로 값을 생성
 
 -- 과거
-insert into board values(board_seq.nextval, '2022-09-01', '2022-11-13', '서울시립미술관 서소문본관', '전시회', '정서영 개인전 오늘 본 것', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-05-26', '2022-08-15', '서울시립미술관 서소문본관', '전시회', '그리드 아일랜드', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user004', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-06-16', '2022-08-07', '서울시립미술관 서소문본관', '전시회', '장-미셸 오토니엘: 정원과 정원', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user010', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-10-25', '2022-11-27', '서울시립미술관 서소문본관', '전시회', '《이례적인 시간, 불확실한 움직임》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user008', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-12-10', '2022-12-11', '서울시립미술관 서소문본관', '전시회', '제12회 서울미디어시티비엔날레 사전프로그램 II 《테라인포밍》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user001', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-09-01', '2022-11-13', '서울시립미술관 서소문본관', 'exhibition', '정서영 개인전 오늘 본 것', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-05-26', '2022-08-15', '서울시립미술관 서소문본관', 'exhibition', '그리드 아일랜드', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user004', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-06-16', '2022-08-07', '서울시립미술관 서소문본관', 'exhibition', '장-미셸 오토니엘: 정원과 정원', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user010', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-10-25', '2022-11-27', '서울시립미술관 서소문본관', 'exhibition', '《이례적인 시간, 불확실한 움직임》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user008', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-10', '2022-12-11', '서울시립미술관 서소문본관', 'exhibition', '제12회 서울미디어시티비엔날레 사전프로그램 II 《테라인포밍》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user001', 0, 0, 1);
 
 
-insert into board values(board_seq.nextval, '2022-12-08', '2023-05-07', '서울시립미술관 서소문본관', '전시회', '최민 컬렉션: 다르게 보기', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user012', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-12-15', '2023-03-19', '서울시립미술관 서소문본관', '전시회', '강석호: 3분의 행복', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user001', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-12-15', '2023-03-12', '서울시립미술관 서소문본관', '전시회', '키키 스미스 ― 자유낙하', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user013', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-10-21', '2023-01-29', '서울시립미술관 서소문본관', '전시회', '2022 유휴공간 프로젝트 《(오, 수줍음)》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user009', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-08', '2023-05-07', '서울시립미술관 서소문본관', 'exhibition', '최민 컬렉션: 다르게 보기', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user012', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-15', '2023-03-19', '서울시립미술관 서소문본관', 'exhibition', '강석호: 3분의 행복', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user001', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-15', '2023-03-12', '서울시립미술관 서소문본관', 'exhibition', '키키 스미스 ― 자유낙하', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user013', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-10-21', '2023-01-29', '서울시립미술관 서소문본관', 'exhibition', '2022 유휴공간 프로젝트 《(오, 수줍음)》', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user009', 0, 0, 1);
 
-insert into board values(board_seq.nextval, '2022-12-03', '2022-12-18', '이화여자대학교 삼성홀', '공연(뮤지컬, 연극)', 'Heize 1st Concert Heize City in Seoul', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user003', 0, 0, 1);
-insert into board values(board_seq.nextval, '2023-01-28', '2023-01-29', '올림픽공원 SK핸드볼경기장', '공연', '(G)I-DLE OFFICIAL FAN CLUB NEVERLAND 3RD FAN MEETING［행운의 편지］', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-11-06', '2023-04-09', '국립현대미술관 서울관', '전시회', '프로젝트 해시태그 2022', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-10-21', '2023-03-12', '국립현대미술관 서울관', '전시회', '임옥상: 여기, 일어서는 땅', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-11-15', '2023-01-15', '올림픽공원 내 우리금융아트홀', '공연(뮤지컬, 연극)', '뮤지컬 [드라큘라]', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
-insert into board values(board_seq.nextval, '2022-12-20', '2023-03-12', '예스24스테이지 1관', '공연(뮤지컬, 연극)', '뮤지컬 〈루드윅 : 베토벤 더 피아노〉', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-03', '2022-12-18', '이화여자대학교 삼성홀', 'concert', 'Heize 1st Concert Heize City in Seoul', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user003', 0, 0, 1);
+insert into board values(board_seq.nextval, '2023-01-28', '2023-01-29', '올림픽공원 SK핸드볼경기장', 'concert', '(G)I-DLE OFFICIAL FAN CLUB NEVERLAND 3RD FAN MEETING［행운의 편지］', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-11-06', '2023-04-09', '국립현대미술관 서울관', 'exhibition', '프로젝트 해시태그 2022', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-10-21', '2023-03-12', '국립현대미술관 서울관', 'exhibition', '임옥상: 여기, 일어서는 땅', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-11-15', '2023-01-15', '올림픽공원 내 우리금융아트홀', 'show', '뮤지컬 [드라큘라]', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+insert into board values(board_seq.nextval, '2022-12-20', '2023-03-12', '예스24스테이지 1관', 'show', '뮤지컬 〈루드윅 : 베토벤 더 피아노〉', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '', '', 'user002', 0, 0, 1);
+
+insert into board values(board_seq.nextval, '2022-02-06', '2023-02-12', '폼텍웍스홀', 'concert', '서울 윈터 재즈 페스티벌 2022', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '합정역 근처', '', 'user007', 0, 0, 1);
+
+insert into board values(board_seq.nextval, '2023-03-30', '2023-04-09', '예스24스테이지 1관', 'festival', '2023서울모빌리티쇼', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '육·해·공의 경계를 뛰어넘는 모빌리티쇼 3호선 대화역 근처', '', 'user005', 0, 0, 1);
+
+insert into board values(board_seq.nextval, '2023-02-02', '2023-02-02', '잠실실내체육관', 'sports', '프로농구(삼성:KT)', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '19시', '', 'user008', 0, 0, 1);
+insert into board values(board_seq.nextval, '2023-02-13', '2023-02-13', '잠실실내체육관', 'sports', '프로농구(삼성:DB)', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '19시', '', 'user008', 0, 0, 1);
+insert into board values(board_seq.nextval, '2023-02-16', '2023-02-16', '잠실실내체육관', 'sports', '프로농구(삼성:SK)', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '19시', '', 'user008', 0, 0, 1);
+insert into board values(board_seq.nextval, '2023-02-10', '2023-02-11', '잠실실내체육관', 'concert', '30주년 한터뮤직 어워즈', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '이틀간 17:00~22:00', '', 'user008', 0, 0, 1);
+insert into board values(board_seq.nextval, '2023-02-25', '2023-02-26', '잠실실내체육관', 'concert', '에스파 콘서트', TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), TO_char(SYSDATE,'YYYY-MM-DD HH24:MI'), '2월 25일(일) 18시, 2월 26일(월) 17시', '', 'user008', 0, 0, 1);
+
 
 select boardNum, LENGTHB(eventplace) BYTE
 from board;
@@ -79,7 +90,7 @@ UPDATE board SET status=0 WHERE boardnum=21;
 Select COUNT(*) FROM board WHERE id='user001' AND writedate LIKE '%2022-12-28%';
 
 -- 조회일 기준 1년(366일) 조회하기
-SELECT eventfrom, eventto, event
+SELECT eventfrom, eventto, event, eventplace, eventtype
 FROM board
 WHERE eventfrom BETWEEN TO_CHAR(SYSDATE - 133, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE + 133, 'YYYY-MM-DD');
 

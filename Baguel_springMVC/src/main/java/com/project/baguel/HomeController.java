@@ -40,12 +40,6 @@ public class HomeController {
 		return "srch_station";
 	}
 	
-	@RequestMapping("cal_view")
-	public String calViewNevigate() {
-		System.out.println("> Controller → calViewNevigate");
-		return "cal_view";
-	}
-	
 	@ExceptionHandler({SQLException.class, DataAccessException.class})
 	public String errorException() {
 		System.out.println("> Controller → errorException");
@@ -54,8 +48,14 @@ public class HomeController {
 	
 	@RequestMapping("error")
 	public String errorNevigate() {
-		System.out.println("> Controller → error");
+		System.out.println("> Controller → error Nevigate");
 		return "error";
+	}
+	
+	@RequestMapping("wip")
+	public String workInProgressNevigate() {
+		System.out.println("> Controller → workInProgress Nevigate");
+		return "wip";
 	}
 	
 }

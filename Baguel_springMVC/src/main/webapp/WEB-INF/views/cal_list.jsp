@@ -89,7 +89,7 @@
 						<tr>
 							<c:choose>
 								<c:when test="${board.status eq '0' }">
-									<td colspan="6">삭제된 글입니다</td>
+									<td colspan="6" style="background: rgba(0, 0, 0, 0.1);">삭제된 글입니다</td>
 								</c:when>
 								<c:otherwise>
 									<td>${(pagination['currentPage']-1) * 10 + status.index + 1}</td>

@@ -27,4 +27,6 @@ public interface IBoardRepository {
 			@Param("boardNum")String boardNum);
 	
 	void deactiveArticle(@Param("boardNum")String boardNum);
+	
+	ArrayList<BoardDTO> getEvents();
 }

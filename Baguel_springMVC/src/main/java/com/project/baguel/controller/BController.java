@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -122,10 +123,26 @@ public class BController {
 	@RequestMapping("cal_list_view/{boardNum}")
 	public String cal_list_view(@PathVariable String boardNum, Model model) {
 		System.out.println("> BController → cal_list_view");
+		
+		// boardNum에 숫자가 아닌 문자가 섞여있는 경우 -> 에러 페이지로
+    String pattern = "^[0-9]*$"; //숫자만
+    boolean isOnlyNumber = Pattern.matches(pattern, boardNum);
+    if(!isOnlyNumber) {
+    	return "error";
+    }
+    
 		model.addAttribute("boardNum", boardNum);
 		
 		bIncreaseViews.execute(model);
 		bGetArticle.execute(model);
+		
+		// boardNum에 해당하는 게시물이 없는 경우 -> 에러 페이지로
+		Map<String, Object> map = model.asMap();
+		BoardDTO boardArticle = (BoardDTO) map.get("boardArticle");
+		if (boardArticle == null) {
+			System.out.println("it's null");
+			return "error";
+		}
 		bGetComments.execute(model);
 		
 		return "cal_list_view";

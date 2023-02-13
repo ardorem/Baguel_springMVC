@@ -16,6 +16,48 @@
   <link rel="stylesheet" href="css/cal_view.css">
   <title>바글</title>
   <link rel="icon" href="images/favicon.png">
+    <script>
+    const inputEvents =  [
+    	<c:forEach items="${events}" var="event">
+   		    <c:if test="${event.eventType eq 'show'}">
+   		    	<c:set var="color" value="#f3d47680"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'sport'}">
+   		    	<c:set var="color" value="#5197ff76"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'concert'}">
+   		    	<c:set var="color" value="#f691b374"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'localfest'}">
+   		    	<c:set var="color" value="#71d39779"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'festival'}">
+   		    	<c:set var="color" value="#4e62a574"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'exhibition'}">
+   		    	<c:set var="color" value="#7f7cdc79"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+   		    <c:if test="${event.eventType eq 'etc'}">
+   		    	<c:set var="color" value="#60636773"/>
+   		    	<c:set var="textColor" value="black"/>
+   		    </c:if>
+    		{
+    			title: '[${event.eventPlace}] ${event.event}',
+    			start: '${event.eventFrom}',
+    			end: '${event.eventTo}',
+   		    constraint: 'businessHours',
+   		    color: '${color}',
+   		    textColor: '${textColor}'
+    		},
+    	</c:forEach>
+];
+  </script>
 </head>
 
 <body>

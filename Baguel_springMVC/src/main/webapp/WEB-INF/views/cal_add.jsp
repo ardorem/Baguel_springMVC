@@ -74,10 +74,10 @@
             <!-- eventFrom -->
             <li><label for="eventFrom">시작날짜 선택</label></li>
             <li id="space-small"></li>
-            <li><input type="date" id="eventFrom" name="eventFrom" value=""></li>
+            <li><input type="date" id="eventFrom" name="eventFrom" value="${param.eventFrom}"></li>
             <li style="margin-top: 15px;"><label for="dateTo">종료날짜 선택</label></li>
             <li id="space-small"></li>
-
+            
             <!-- eventTo -->
             <li><input type="date" id="eventTo" name="eventTo" value=""></li>
             <li class="leftTxt">* 시작일과 종료일이 같다면, <span class="blueTxt">동일하게 입력</span> 해주세요</li>
