@@ -66,7 +66,7 @@
 		<main>
 			<!-- !!! 여기부터 작성 !!! -->
 			<div id="mainTitleUser">
-				<h1>등록된 일정</h1>
+				<h1>요청된 일정</h1>
 			</div>
 			<div id="order" class="table-responsive">
 				<h1>일정 추가요청 목록</h1>

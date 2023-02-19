@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.project.baguel.model.StationDTO;
+import com.project.baguel.model.StationMapDTO;
 
 public interface IMapRepository {
 	String[] getAllLines();
-	ArrayList<StationDTO> getAllErr(@Param("selectDate") String selectDate, 
+	ArrayList<StationMapDTO> getAllErr(@Param("selectDate") String selectDate, 
 			@Param("line") String line);
 }

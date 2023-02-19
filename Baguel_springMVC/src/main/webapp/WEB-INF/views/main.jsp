@@ -62,7 +62,7 @@
     </nav>
     <!-- ************************************************************************* header & nav end -->
 
-    <!-- ******************************************************************************main start -->
+<!-- ******************************************************************************main start -->
     <main>
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
@@ -74,22 +74,25 @@
             aria-label="Slide 3"></button> -->
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <a href="#">
-              <img src="images/people_2-1.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <p>작년의 오늘, 가장 밀집했던 곳은?</p>
-              </div>
-            </a>
-          </div>
-          <div class="carousel-item">
-            <a href="#">
-              <img src="images/christmas2-1.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <p>크리스마스, 가장 밀집했던 곳은?</p>
-              </div>
-            </a>
-          </div>
+	          <div class="carousel-item active">
+	            <a href="today_best5">
+	              <img src="images/people_2-1.jpg" class="d-block w-100" alt="...">
+	              <div class="carousel-caption d-none d-md-block">
+	                <p>작년의 오늘, 가장 밀집했던 곳은?</p>
+	              </div>
+	            </a>
+	          </div>
+	        
+	        <form action name="holiday_form" method="GET" action="holiday_best5">
+	          <div class="carousel-item">
+	            <a href="holiday_best5">
+	              <img src="images/samiljeol2-1.jpg" class="d-block w-100" alt="...">
+	              <div class="carousel-caption d-none d-md-block">
+	                <p>삼일절, 가장 밀집했던 곳은?</p>
+	              </div>
+	            </a>
+	          </div>
+	      	</form>
           <!-- <div class="carousel-item">
             <a href="https://www.daum.net/">
               <img src="images/crowd.jpg" class="d-block w-100" alt="...">

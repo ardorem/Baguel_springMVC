@@ -6,12 +6,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/header_footer.css">
-  <link rel="stylesheet" href="css/srch_station.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/srch_station.css">
+
   <title>바글</title>
-  <link rel="icon" href="images/favicon.png">
 </head>
 
 <body>
@@ -63,66 +62,42 @@
 
     <!-- ******************************************************************************main start -->
     <main>
-      <div id="mainTitleUser">
+      <!-- !!! 여기부터 작성 !!! -->
+      <div id="mainTitle">
         <h1>지하철역으로 조회</h1>
       </div>
-
-
-      <!-- <div id="search"> -->
-
-
-      <form id="search" actoin="result_station.html" method="get">
+      <div id="search">
         <!--후에 form태그로 변경하기-->
-
-        <div id="wrapper">
-          <div id="selectDate">
-            <h4>날짜 선택</h4>
-            <input type="date" class="cal" required placeholder="날짜 선택">
-          </div>
-
-          <div id="selectPlace">
-            <h4>장소 선택</h4>
-            <input type="text" placeholder="조회할 지하철역을 선택하세요.">
-            <!-- <img src="images/search.png" alt="검색" onclick="location.href='information.html'">
-          <input type="image" onclick="location.href='information.html'" src="Images/search.png" alt="검색"> -->
-          </div>
-
-          <div>
-            <button id="searchIcon" type="submit" name="click" onclick="location.href='result_station.html'">
-              <img id="btnimg" src="images/search.png"></button>
-          </div>
-
-          <div id="bestStation">
-            <h4>인기지하철역</h4>
-            <ol>
-              <li>강남역</li> <!-- 1 -->
-              <li>잠실역</li>
-              <li>고속터미널역</li>
-              <li>서울역</li>
-              <li>홍대입구역</li> <!-- 5 -->
-              <li>선릉역</li>
-              <li>신림역</li>
-              <li>사당역</li>
-              <li>구로디지털단지역</li>
-              <li>가산디지털단지역</li> <!-- 10 -->
-            </ol>
-          </div>
-
-          <div id="subwayLinemap">
-            <!-- <div id="mapImg" style='position:relative;width:500px'><a
-          href="http://map.kakao.com/?REGION=01&STARTNAME=&ENDNAME=&STARTID=&ENDID=&URLLINK=true&target=subway" target="_blank"><img src="http://map.kakao.com/subway/linemap/preview/seoul.gif" width="498" height="400" border="0" style="border:1px solid #ccc"></a><div class="tpText" style="background:url(//t1.daumcdn.net/localimg/localimages/07/2007/map/2007/arrow_yl.gif) 7px 9px no-repeat; background-color:#000; position:absolute; top:0px; left:0px; opacity:0.7; filter:alpha(opacity=70); width:100%; padding:5px 0 3px 0; color:#fff; font-size:12px; font-family:돋움; word-break:break-all; overflow:hidden; line-height:17px;text-indent:15px;'">아래를 클릭하시면, <span style='color:#ffc228'><b></b></span>수도권 지하철 노선도를 크게 보실 수 있습니다.</div></div>
-        <div> -->
-            <h4>지하철노선도</h4>
-            <img id="subwayImg" src="images/subway.png">
-          </div>
-
+        <form id="srch_station" name="srchS_form" method="GET" action="result_station">
+        <div id="Date">
+          <h4>날짜 선택</h4>
+          <input id="selectDate" name="selectDate" type="date" required placeholder="날짜 선택">
         </div>
-      </form>
-
-
-      <!-- </div> -->
-
-
+        <div id="selectPlace">
+          <h4>장소 선택</h4>
+          <select id="line" name="line">
+          	<option value="1호선">1호선</option>
+          	<option value="2호선">2호선</option>
+          	<option value="3호선">3호선</option>
+          	<option value="4호선">4호선</option>
+          	<option value="5호선">5호선</option>
+          	<option value="6호선">6호선</option>
+          	<option value="7호선">7호선</option>
+          	<option value="8호선">8호선</option>
+          </select>
+          <input type="text" id="stationName" name="stationName" placeholder="조회할 지하철역을 선택하세요.">																							
+        </div>
+        
+        <div>
+          <button id="searchIcon" type="submit" name="click"><img
+              id="btnimg" src="images/search.png" ></button>
+        </div>
+        </form>
+      </div>
+      <div id="subwayLinemap">
+    		<!-- <h4>지하철노선도</h4> -->
+    		<img id="subwayImg" src="images/subway.png">
+  		</div>
     </main>
     <!-- ************************************************************************ main -->
 

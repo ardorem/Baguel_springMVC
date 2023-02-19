@@ -1,6 +1,6 @@
 /* ##################  main start ################## */
 main {
-  height: 1000px;
+  height: 1500px;
 }
 /*  **********************************************************    slide */
 
@@ -8,26 +8,35 @@ main {
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
+*{
+  animation: fadein 1.5s;
+}
+#mainTitle h1 {
+  margin: 50px;
+  text-align: center;
+}
+
 #search {
-  animation: fadein 3s;
   justify-content: stretch;
   display: flex;
-  align-items: center; /* 교차 축 */
-  justify-content: space-around; /* 주축 */
+  align-items: center; /* 援먯감 異� */
+  justify-content: space-around; /* 二쇱텞 */
+  flex-wrap: wrap;
 }
+
+#srch_station{
+  display: flex;
+  margin: 50px 0;
+  /* align-items: center;
+  justify-content: space-around; */
+}
+
 #search h4{
   text-shadow: 0 -1px 0 #222;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-#wrapper {
-  display: grid;
-  /* grid-template-columns: 480px 480px 250px; */
-  grid-template-columns: 450px 450px 100px;
-  /* grid-template-rows: 100px; */
-  /* transform: translate(-50%, -50%); */
-}
 input{
   /* position: relative; */
   width: 400px;
@@ -35,15 +44,25 @@ input{
   border: 5px solid #00B050;
   /* position:relative;  */
   /* padding: 0 40px 0 15px; */
-  padding: 3px;
+  padding: 10px;
   /* font: 20px; */
   /* background: url('images/calendar.png') no-repeat right center / 15px auto; */
   /* content : attr(data-placeholder); */
 }
 
+select::-ms-expand { 
+	display: none;
+}
 
-#selcetPlace {
-  margin-left: 250px;
+select{
+  width: 100px;
+  height: 60px;
+  border: 5px solid #00B050;
+  padding: 3px;
+}
+
+#selectPlace {
+  margin: 0 20px 0px 50px;
   padding-left: 10px;
 }
 #searchIcon {
@@ -59,24 +78,13 @@ input{
   width: 60px;
   margin-top: 20px;
 }
-#bestStation {
-  margin-top: 50px;
-  /* margin-left: 70px; */
-}
-#bestStation > ol > li {
-  margin-left: 25px;
-  line-height: 180%;
-}
-#subwayLinemap{
-  margin-top: 50px;
-}
+
 #subwayImg {
-width: 100%;
+margin: auto;
+display: block;
+width: 80%;
 }
-#subwayImg:hover{
-  transform: scale(2.0);
-  transition: .5s;
-}
+
 
 /*  ***********************************************    slide */
 /* ##################  main end ################## */

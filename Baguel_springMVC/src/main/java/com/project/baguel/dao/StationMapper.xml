@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.IStationRepository">
+
+<resultMap type="com.project.baguel.model.StationDTO" id="best5">
+	<result property="weekOfYear" column="weeknumber"/>
+	<result property="dayOfWeek" column="daynumber" />
+
+</resultMap>
+
+<select id="todayBest5" resultMap="best5">
+	
+</select>
+
+<select id="getStationERR" resultType="String">
+	select err
+	from ERR2023
+	where  selectDate=#{selectDate} and line=#{line} and stationName=#{stationName}
+</select>
+
+<resultMap type="com.project.baguel.model.StationDTO" id="perTimeMap">
+	<result property="direction"	column="direction" />
+	<result property="t55_65"	column="t55_65" />
+	<result property="t70_95"	column="t70_95" />
+	<result property="t100_165"	column="t100_165" />
+	<result property="t170_195"	column="t170_195" />
+	<result property="t200_215"	column="t200_215" />
+	<result property="t220_last"	column="t220_last" />
+</resultMap>
+
+<select id="getTimeSData" resultMap="perTimeMap">
+	select 
+	direction , 
+	t55_65 , 
+	t70_95, 
+	t100_165, 
+	t170_195, 
+	t200_215, 
+	t220_last
+	from per_time_err
+	where line=#{line} and stationName=#{stationName} and dayNumber = (select dayNumber
+																from err2023
+																where selectDate=#{selectDate} and line=#{line} and stationName=#{stationName})
+</select>
+
+ </mapper>

@@ -32,7 +32,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
       + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-      + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+      + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -64,7 +64,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
       + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-      + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+      + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -96,7 +96,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -128,7 +128,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -160,7 +160,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -192,7 +192,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -224,7 +224,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({
@@ -256,7 +256,7 @@ window.initMap = function () {
 
     let msg = '<h5>🚇' + line + '</h5>'
     + '<h3>' + stationName + '역 (' + stationNo + ')' + '</h3>' + '<br>'
-    + '<p>🚶예측 혼잡률 : <span class="emphasis">' + err + '</span>%</p>';
+    + '<p>🚶예측 혼잡률<br><span class="emphasis">' + err + '</span></p>';
     marker.addListener("mouseover", () => {
       infowindow.setContent(msg);
       infowindow.open({

@@ -34,11 +34,11 @@ public class HomeController {
 //		return "srch_place";
 //	}
 //	
-	@RequestMapping("srch_station")
-	public String srchStationNevigate() {
-		System.out.println("> Controller → srchStationNevigate");
-		return "srch_station";
-	}
+//	@RequestMapping("srch_station")
+//	public String srchStationNevigate() {
+//		System.out.println("> Controller → srchStationNevigate");
+//		return "srch_station";
+//	}
 	
 	@ExceptionHandler({SQLException.class, DataAccessException.class})
 	public String errorException() {

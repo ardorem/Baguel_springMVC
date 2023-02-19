@@ -1,5 +1,9 @@
 package com.project.baguel.model;
 
+import java.sql.Date;
+
+import java.util.Calendar;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,15 +11,25 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 public class StationDTO {
-	private String stationName;
-	private String stationNo;
+	
+	private Calendar now = Calendar.getInstance();
+	private int weekOfYear = now.get(Calendar.WEEK_OF_YEAR);
+	private int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
+	
+	
+	private Date selectDate;
 	private String line;
-	private String lineNo;
-	private String lat;
-	private String lng;
-	private String err; //Expected rush ratio
-	private String selectDate;
+	private String stationName;
+	private String ERR;
+	private int dayNumber;
+	private String direction;
+	private String t55_65;
+	private String t70_95;
+	private String t100_165;
+	private String t170_195;
+	private String t200_215;
+	private String t220_last;
 }

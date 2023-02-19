@@ -3,7 +3,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.baguel.dao.IMapRepository">
 	
-	<resultMap type="com.project.baguel.model.StationDTO"
+	<resultMap type="com.project.baguel.model.StationMapDTO"
 		id="getAllErr">
 		<result property="selectDate" column="selectDate" />
 		<result property="line" column="line" />

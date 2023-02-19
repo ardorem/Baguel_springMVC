@@ -112,7 +112,7 @@
       <!-- !!! 여기부터 작성 !!! -->
 
       <div id="mainTitleUser">
-        <h1>캘린더 보기📅</h1>
+        <h1>달력으로 조회📅</h1>
       </div>
       <div id="calendar"></div>
 

@@ -1,93 +1,126 @@
 /* ##################  main start ################## */
 main {
-  height: 1500px;
+  height: 1600px;
 }
 /*  **********************************************************    slide */
-
-#result {
-  animation: fadein 3s;
-  width: 1060px;
-  position: absolute;
-  top: 38%;
-  left: 25%;
-  display: grid;
-  grid-template-columns: repeat(2, 480px);
-  grid-template-rows: repeat(5, 120px);
-  /* transform: translate(-50%, -50%); */
-  justify-content: stretch;
+#mainTitle h1 {
+  margin: 50px;
+  text-align: center;
 }
-
+#result {
+  /* justify-content: stretch; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  /* flex-wrap: wrap; */
+}
 #result h4{
   text-shadow: 0 -1px 0 #222;
   font-size: 20px;
   margin-bottom: 10px;
 }
 input{
-  position: relative;
   width: 400px;
   height: 60px;
   border: 5px solid #00B050;
+  padding: 10px;
 }
-input {
-  position:relative; 
-  padding: 0 40px 0 15px;
-  /* font: 20px; */
-  /* background: url('images/calendar.png') no-repeat right center / 15px auto; */
-  content : attr(data-placeholder);
-}
-#selcetPlace {
-  margin-left: 250px;
+
+#selectPlace {
+  margin: 0 20px 0px 50px;
   padding-left: 10px;
 }
-#searchIcon {
-  background-image: url('Images/search.png');
-  position: absolute;
-  background-color: transparent;
-  border: none;
+
+#ERR{
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-color: #D1D1D1;*/
+  margin: 0 15% 10px 15%;
+}
+#ERR h1{
+  text-shadow: 0 -1px 0 #222;
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.8;
+}
+#ERR mark{
+	background-color: rgb(132, 208, 137);
+}
+#others{
+  margin: 30px 0 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ERRexplain{
+
+  align-items: center;
+  justify-content: center;
+}
+#ERRTable{
+  border : 1px solid #D1D1D1;
+  border-collapse: collapse;
+  
+}
+th,td{
+  border : 1px solid #D1D1D1;
+  padding: 10px;
+  text-align: center;
+}
+#seamless{
+  background-color: #6FCB7A;
+  border-top: 2px solid #D1D1D1;
+}
+#normal{
+ background-color: #F7F466;
+}
+#crowded{
+  background-color: #FA5F2E;
+}
+#standard{
   margin-top: 10px;
-}
-#graph{
-  margin-top: 20px;
-}
-#graph img {
-width: 900px;
-grid-column: 1/3;
-grid-row: 2/4;
-padding-right: 15px;
-margin: auto;
-display: block;
 }
 #button{
   /* position: relative; */
-  grid-column-start: 2;
-  grid-row-start: 5;
-  width: 100%;
-  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* float: right; */
   margin-top: 30px;
+  margin-left: 8%;
 }
 #backIcon{
-  /* grid-column-start: 1; */
-  /* grid-row-start: 5; */
-  width: 110px;
+  width: 150px;
+  height: 75px;
   background-color: transparent;
   border: none;
 }
 #moreIcon{
-  /* grid-column-start: 2;
-  grid-row-start: 4; */
-  width: 110px;
+  width: 150px;
+  height: 75px;
   background-color: transparent;
   border: none;
+  margin-left: 30px;
 } 
-#more_station{
-  position: relative;
-  margin-top: 800px;
-  left: 10%;
+#chart{
+  width: 70%; 
+  text-align:center; 
+  justify-content: center;
+  margin: 0 auto;
 }
-#more_place{
-  position: relative;
-  margin-top: 800px;
-  left: 15%;
+#chartTitle{
+	margin-bottom: 20px;
+}
+#perTimeChart{
+  width: 100%; 
+  display:flex; 
+  margin: 0 auto;
+  	
 }
 /*  ***********************************************    slide */
 /* ##################  main end ################## */

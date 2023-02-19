@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.project.baguel.dao.IMapRepository;
-import com.project.baguel.model.StationDTO;
+import com.project.baguel.model.StationMapDTO;
 
 @Service
 public class MGetAllErr implements IMapService {
@@ -24,7 +24,7 @@ public class MGetAllErr implements IMapService {
 		System.out.println("getAllLines D O N E");
 		Map<String, Object> map = model.asMap();
 		String selectDate = String.valueOf(map.get("selectDateStation"));
-		ArrayList<StationDTO> errTmp = new ArrayList<StationDTO>();
+		ArrayList<StationMapDTO> errTmp = new ArrayList<StationMapDTO>();
 		for(String line : lines) {
 			if(line.equals("1호선")) {
 				System.out.println("selectDate : " + selectDate);
