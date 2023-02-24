@@ -14,8 +14,7 @@
   <link rel="stylesheet" href="css/map.css">
   <!-- 맵api 관련 js start-->
   <script defer src="js/map.js"></script>
-  <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs_w9gQDXra9aXhO8JeUy0Rzeqv_8Cb5I&callback=initMap"></script>
+<script defer="" src="https://maps.googleapis.com/maps/api/js?key=KEY&amp;callback=initMap"></script>
   <!-- 맵api 관련 js end-->
   <link rel="icon" href="images/favicon.png">
   <title>바글</title>
