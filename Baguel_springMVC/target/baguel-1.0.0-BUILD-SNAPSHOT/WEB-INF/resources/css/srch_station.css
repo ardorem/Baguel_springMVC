@@ -1,0 +1,76 @@
+#search {
+  justify-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#srch_station{
+  display: flex;
+  margin: 50px 0;
+  /* align-items: center;
+  justify-content: space-around; */
+}
+
+#search h4{
+  text-shadow: 0 -1px 0 #222;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+input{
+/*   width: 400px; */
+  height: 60px;
+  border: 5px solid #00B050;
+  padding: 10px;
+}
+
+/* select::-ms-expand {  */
+/* 	display: none; */
+/* } */
+
+#selectDate {
+	width: 250px;
+	font-size: 23px;
+}
+
+select{
+  height: 60px;
+  border: 5px solid #00B050;
+  padding: 3px;
+  font-size: 23px;
+}
+
+#line {
+	width: 100px;
+}
+
+#stationName {
+	width: 300px;
+}
+
+#selectPlace {
+  margin: 0 20px 0px 50px;
+  padding-left: 10px;
+}
+#searchIcon {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+}
+#btnimg {
+  height: 60px;
+  width: 60px;
+  margin-top: 20px;
+}
+
+#subwayImg {
+margin: auto;
+display: block;
+width: 80%;
+}
+
+/*  ***********************************************    slide */
+/* ##################  main end ################## */

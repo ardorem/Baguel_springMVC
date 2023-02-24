@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.IPLacePastRepository">
+
+	<resultMap type="com.project.baguel.model.PlacePastDTO"
+		id="getGbPast">
+		<result property="baseDate" column="baseDate" />
+		<result property="place" column="place" />
+		<result property="day" column="day" />
+		<result property="tmp" column="tmp" />
+		<result property="pcp" column="pcp" />
+	</resultMap>
+	
+	<select id="getGbpData" resultMap="getGbPast">
+		SELECT baseDate, gBpalace AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+	<select id="getDspData" resultMap="getGbPast">
+		SELECT baseDate, dSpalace AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+	<select id="getCgpData" resultMap="getGbPast">
+		SELECT baseDate, cGpalace AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+	<select id="getCdpData" resultMap="getGbPast">
+		SELECT baseDate, cDpalace AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+	<select id="getCgardenData" resultMap="getGbPast">
+		SELECT baseDate, cGarden AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+	<select id="getSemaData" resultMap="getGbPast">
+		SELECT baseDate, sema AS place, day, tmp, pcp
+		FROM place_2019
+		WHERE baseDate LIKE ${baseDate}
+	</select>
+	
+</mapper>

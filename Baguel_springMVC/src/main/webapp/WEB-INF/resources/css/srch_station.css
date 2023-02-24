@@ -1,26 +1,8 @@
-/* ##################  main start ################## */
-main {
-  height: 1500px;
-}
-/*  **********************************************************    slide */
-
-@keyframes fadein {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-*{
-  animation: fadein 1.5s;
-}
-#mainTitle h1 {
-  margin: 50px;
-  text-align: center;
-}
-
 #search {
   justify-content: stretch;
   display: flex;
-  align-items: center; /* 援먯감 異� */
-  justify-content: space-around; /* 二쇱텞 */
+  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -38,27 +20,34 @@ main {
 }
 
 input{
-  /* position: relative; */
-  width: 400px;
+/*   width: 400px; */
   height: 60px;
   border: 5px solid #00B050;
-  /* position:relative;  */
-  /* padding: 0 40px 0 15px; */
   padding: 10px;
-  /* font: 20px; */
-  /* background: url('images/calendar.png') no-repeat right center / 15px auto; */
-  /* content : attr(data-placeholder); */
 }
 
-select::-ms-expand { 
-	display: none;
+/* select::-ms-expand {  */
+/* 	display: none; */
+/* } */
+
+#selectDate {
+	width: 250px;
+	font-size: 23px;
 }
 
 select{
-  width: 100px;
   height: 60px;
   border: 5px solid #00B050;
   padding: 3px;
+  font-size: 23px;
+}
+
+#line {
+	width: 100px;
+}
+
+#stationName {
+	width: 300px;
 }
 
 #selectPlace {
@@ -66,8 +55,6 @@ select{
   padding-left: 10px;
 }
 #searchIcon {
-  /* background-image: url('Images/search.png'); */
-  /* background-image: url('/images/search.png'); */
   position: absolute;
   background-color: transparent;
   border: none;
@@ -84,7 +71,6 @@ margin: auto;
 display: block;
 width: 80%;
 }
-
 
 /*  ***********************************************    slide */
 /* ##################  main end ################## */

@@ -1,0 +1,33 @@
+/* ##################  main start ################## */
+main {
+  height: 1000px;
+}
+/*  **********************************************************    slide */
+
+#today1{
+  animation: fadein 3s;
+  margin-left: 15%;
+  margin-top: 40px;
+}
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+#today1 > h1 {
+  font-size: 40px;
+}
+#highlight{
+  background-color: #00B050;
+}
+#today1 > h4{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+#today1 > img{
+  margin: 20px, auto;
+  width: 1150px;
+  border: #00B050 3px solid;
+}
+/*  ***********************************************    slide */
+/* ##################  main end ################## */

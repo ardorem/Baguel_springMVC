@@ -21,6 +21,7 @@ public class MInsertNickCheck implements IMemberService {
 		Map<String, Object> map = model.asMap();
 		MemberDTO memberDTO = (MemberDTO) map.get("memberDTO");
 		String userNick = memberDTO.getUserNick();
+		System.out.println(">> user try to register NickName : " + userNick + " ***");
 		String dbNick = memberRepository.insertIdCheck(userNick);
 		int nickResult;
 		if(dbNick == null) {

@@ -1,0 +1,153 @@
+/* ##################  main start ################## */
+
+main {
+  animation: fadein 1s;
+  margin-bottom: 300px;
+}
+
+#order h1 {
+  margin-bottom: 20px;
+}
+#order{
+  width: 1300px;
+  margin: 100px auto;
+}
+#order table{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  
+  /* 내용이 넘치면 ...처리 */
+  table-layout: fixed;
+}
+#order tr {
+  border-bottom: 1px solid #ccc;
+}
+#order td {
+  height: 40px;
+
+  /* 내용이 넘치면 ...처리 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#order th:nth-child(1) {
+  width: 5%;
+}
+#order th:nth-child(2) {
+  width: 10%;
+}
+#order td:nth-child(3) {
+  text-align: left;
+  padding-left: 20px;
+}
+#order th:nth-child(4) {
+  width: 13%;
+}
+#order th:nth-child(5) {
+  width:7%;
+}
+#order th:nth-child(6) {
+  width:6%;
+}
+
+#order a {
+  color: black;
+}
+#order a:visited {
+  color: black;
+}
+#order a:hover {
+  color: rgb(231, 77, 77);
+}
+
+#calAdd h3 {
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: right;
+  line-height: 50px;
+}
+/* #calAdd a, a:visited{
+  background: #CBCE91;
+  color:#76528B;
+}
+#calAdd a:hover {
+  color: #CBCE91;
+  background:#76528B;
+} */
+
+#calAdd input {
+  margin-top: 10px;
+  float: right;
+  background: #02343F;
+  color : #F0EDCC;
+  width: 250px;
+  height: 50px;
+  font-family: "NanumSquareNeo-Variable";
+  font-size: 25px;
+  border-radius: 30px;
+  border: 2px solid #02343F;
+}
+#calAdd input:hover {
+  margin-top: 10px;
+  float: right;
+  background: #F0EDCC;
+  color : #02343F;
+  width: 250px;
+  height: 50px;
+  font-family: "NanumSquareNeo-Variable";
+  font-size: 25px;
+  border-radius: 30px;
+  border: 2px solid #02343F;
+  cursor: pointer;
+}
+
+#paging {
+  margin-top: 50px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#page {
+  padding: 13px;
+  margin: 5px;
+  font-family: 'NanumSquareNeo-Variable';
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  background: #02343F;
+  color : #F0EDCC;
+}
+
+#paging button:hover {
+  background: #F0EDCC;
+  color : #02343F;
+  cursor: pointer;
+}
+
+#currentPage{
+  padding: 13px;
+  margin: 5px;
+  font-family: 'NanumSquareNeo-Variable';
+  font-weight: 1000;
+  font-size: 15px;
+  border: none;
+  background: #F0EDCC;
+  color : #02343F;
+}
+
+#complete {
+  background: black;
+  color: white;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+#articleEmpty {
+  height: 600px;
+  font-size: 2em;
+}
+/* ##################  main end ################## */

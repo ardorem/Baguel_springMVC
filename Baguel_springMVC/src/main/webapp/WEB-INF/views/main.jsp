@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<!-- version : 2023-02-24-FRI MIK -->
 <html lang="ko">
- 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +74,7 @@
             aria-label="Slide 3"></button> -->
         </div>
         <div class="carousel-inner">
-	          <div class="carousel-item active">
+	          <div class="carousel-item active" data-bs-interval="3000">
 	            <a href="today_best5">
 	              <img src="images/people_2-1.jpg" class="d-block w-100" alt="...">
 	              <div class="carousel-caption d-none d-md-block">
@@ -84,7 +84,7 @@
 	          </div>
 	        
 	        <form action name="holiday_form" method="GET" action="holiday_best5">
-	          <div class="carousel-item">
+	          <div class="carousel-item"  data-bs-interval="3000">
 	            <a href="holiday_best5">
 	              <img src="images/samiljeol2-1.jpg" class="d-block w-100" alt="...">
 	              <div class="carousel-caption d-none d-md-block">

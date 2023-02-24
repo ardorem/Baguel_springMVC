@@ -24,7 +24,6 @@ public class PController {
 	@Qualifier("PGetWeather")
 	IPlaceService pGetWeather;
 
-
 	@Autowired
 	@Qualifier("PCalcVisitors")
 	IPlaceService pCalcVisitors;

@@ -1,9 +1,5 @@
 package com.project.baguel.model;
 
-import java.sql.Date;
-
-import java.util.Calendar;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,16 +10,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class StationDTO {
-	
-	private Calendar now = Calendar.getInstance();
-	private int weekOfYear = now.get(Calendar.WEEK_OF_YEAR);
-	private int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
-	
-	
-	private Date selectDate;
+	private String selectDate;
 	private String line;
 	private String stationName;
-	private String ERR;
+	private String err;
 	private int dayNumber;
 	private String direction;
 	private String t55_65;

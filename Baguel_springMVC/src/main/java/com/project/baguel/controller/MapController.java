@@ -2,6 +2,8 @@ package com.project.baguel.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -9,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.baguel.service.map.IMapService;
-import com.project.baguel.service.map.MGetAllErr;
 import com.project.baguel.service.place.IPlaceService;
 
 @Controller
@@ -51,8 +52,10 @@ public class MapController {
 	IMapService mGetAllErr;
 	
 	@RequestMapping("map")
-	public String showMap(Model model) {
+	public String showMap(Model model, HttpSession session) {
 		System.out.println("> Controller → showMap");
+		String userId = (String) session.getAttribute("userId");
+		System.out.println("> user [ " + userId + " ] accessed MAP PAGE ***");
 //		- 모든 장소 데이터 받아오기 ArrayList
 		pGetPlaces.execute(model);
 		

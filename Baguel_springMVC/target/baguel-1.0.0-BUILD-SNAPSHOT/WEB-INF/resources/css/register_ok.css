@@ -1,0 +1,39 @@
+/* ##################  main start ################## */
+main {
+  min-height: 650px;
+  animation: fadein 2s;
+  margin-bottom: 100px;
+}
+
+#addOk h1 {
+  display: block;
+  text-align: center;
+  margin: 200px auto;
+  max-width: 800px;
+  font-size: 45px;
+}
+.welcome {
+  font-size: 30px;
+}
+
+#found {
+  width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#foundResult{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+#gap {
+  height: 40px;
+}
+
+#linkAction {
+  width: 80%;
+}
+
+/* ##################  main end ################## */

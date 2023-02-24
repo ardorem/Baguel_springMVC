@@ -1,16 +1,4 @@
-/* @font-face{
-  font-family: 'NanumRG';
-  src: local('NanumSquareNeo Sans'),
-  url('/fonts/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff') format('woff'),
-  url('/fonts/NanumSquareNeo/NanumSquareNeo-bRg.ttf') format('truetype');
-}
-@font-face{
-  font-family: 'NanumHv';
-  src: local('NanumSquareNeo Sans'),
-  url('/fonts/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff') format('woff'),
-  url('/fonts/NanumSquareNeo/NanumSquareNeo-eHV.ttf') format('truetype');
-} */
-/* 웹 폰트로 사용시 */
+/* Web Font */
 @font-face {
   font-family: 'NanumSquareNeo-Variable';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
@@ -18,9 +6,14 @@
   font-style: normal;
 } 
 ::selection {
-  background-color: #00B050; /* 드래그 색 바꾸기 */
+  background-color: #00B050; /* Drag Color */
+}
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 * {
+  animation: fadein 0.5s;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -169,13 +162,7 @@ nav {
 /*  **********************************************************    navi end*/
 /* ##################  header & nav end ################## */
 
-@keyframes fadein {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
 #mainTitleUser h1 {
-  animation: fadein 3s;
   display: block;
   text-align: center;
   margin: 60px auto;

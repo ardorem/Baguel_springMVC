@@ -9,12 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_footer.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/srch_station.css">
-
+  <script src="js/srch_station.js"></script>
   <title>바글</title>
+  
 </head>
 
 <body>
   <div id="container">
+
     <!-- ****************************************************************************** header & nav start-->
     <header>
       <a href="main" id="logo">
@@ -63,7 +65,7 @@
     <!-- ******************************************************************************main start -->
     <main>
       <!-- !!! 여기부터 작성 !!! -->
-      <div id="mainTitle">
+      <div id="mainTitleUser">
         <h1>지하철역으로 조회</h1>
       </div>
       <div id="search">
@@ -71,25 +73,29 @@
         <form id="srch_station" name="srchS_form" method="GET" action="result_station">
         <div id="Date">
           <h4>날짜 선택</h4>
-          <input id="selectDate" name="selectDate" type="date" required placeholder="날짜 선택">
+          <input id="selectDate" name="selectDate" type="date" required value="${today }">
         </div>
         <div id="selectPlace">
-          <h4>장소 선택</h4>
-          <select id="line" name="line">
-          	<option value="1호선">1호선</option>
-          	<option value="2호선">2호선</option>
-          	<option value="3호선">3호선</option>
-          	<option value="4호선">4호선</option>
-          	<option value="5호선">5호선</option>
-          	<option value="6호선">6호선</option>
-          	<option value="7호선">7호선</option>
-          	<option value="8호선">8호선</option>
-          </select>
-          <input type="text" id="stationName" name="stationName" placeholder="조회할 지하철역을 선택하세요.">																							
+            <h4>지하철역 선택</h4>
+            <select id="line" name="line" onchange="stationChange(this)">
+              <option value="호선">호선</option>
+              <option value="1호선">1호선</option>
+              <option value="2호선">2호선</option>
+              <option value="3호선">3호선</option>
+              <option value="4호선">4호선</option>
+              <option value="5호선">5호선</option>
+              <option value="6호선">6호선</option>
+              <option value="7호선">7호선</option>
+              <option value="8호선">8호선</option>
+            </select>
+            <!-- <input type="text" id="stationName" name="stationName" placeholder="조회할 지하철역을 선택하세요.">																							 -->
+            <select id ="stationName" name="stationName">
+              <option value="none">호선을 우선 선택해 주세요</option>
+            </select>
         </div>
         
         <div>
-          <button id="searchIcon" type="submit" name="click"><img
+          <button id="searchIcon" type="button" onclick="stationSrchConfirm()"><img
               id="btnimg" src="images/search.png" ></button>
         </div>
         </form>
@@ -130,6 +136,16 @@
     </footer>
     <!-- ************************************************************************ footer end -->
   </div>
+    <script>
+	  const line1 = [<c:forEach items="${line1 }" var="line">'${line}', </c:forEach>];
+	  const line2 = [<c:forEach items="${line2 }" var="line">'${line}', </c:forEach>];
+	  const line3 = [<c:forEach items="${line3 }" var="line">'${line}', </c:forEach>];
+	  const line4 = [<c:forEach items="${line4 }" var="line">'${line}', </c:forEach>];
+	  const line5 = [<c:forEach items="${line5 }" var="line">'${line}', </c:forEach>];
+	  const line6 = [<c:forEach items="${line6 }" var="line">'${line}', </c:forEach>];
+	  const line7 = [<c:forEach items="${line7 }" var="line">'${line}', </c:forEach>];
+	  const line8 = [<c:forEach items="${line8 }" var="line">'${line}', </c:forEach>];
+  </script>
 </body>
 
 </html>

@@ -81,6 +81,8 @@ public class MController {
 		PrintWriter out = response.getWriter();
 		model.addAttribute("userId", userId);
 		model.addAttribute("userPw", userPw);
+		System.out.println("> user try to login ID : "+userId+ "***");
+		System.out.println("> user try to login PW : "+userPw + "***");
 		mLoginCheck.execute(model);
 		Map<String, Object> loginCheckmap = model.asMap();
 
@@ -123,6 +125,8 @@ public class MController {
 					session.setAttribute("userLogin", "logined");
 					session.setAttribute("userId", loginMember.getUserId());
 					session.setAttribute("userNick", loginMember.getUserNick());
+					session.setMaxInactiveInterval(1800); // 30 min
+					System.out.println("> user Login Success!");
 				}
 				return "login_ok";
 			}
@@ -134,6 +138,7 @@ public class MController {
 	public String logout(HttpSession session) {
 		System.out.println("> Controller → logout");
 		session.invalidate();
+		System.out.println("> user LOG OUT");
 		return "redirect:/logout_ok";
 	}
 	
@@ -186,7 +191,7 @@ public class MController {
 			return "register";
 		} else {
 			mInsertMember.execute(model);
-//			model.addAttribute("userId", memberDTO.getUserId());
+
 			return "redirect:/register_ok/"+memberDTO.getUserId();
 		}
 	}

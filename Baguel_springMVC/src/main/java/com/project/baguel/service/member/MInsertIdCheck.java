@@ -21,6 +21,7 @@ public class MInsertIdCheck implements IMemberService {
 		Map<String, Object> map = model.asMap();
 		MemberDTO memberDTO = (MemberDTO) map.get("memberDTO");
 		String userId = memberDTO.getUserId();
+		System.out.println(">> user try to register ID : " + userId + " ***");
 		String dbId = memberRepository.insertIdCheck(userId);
 		int idResult;
 		if(dbId == null) {

@@ -28,6 +28,10 @@ public class MInsertMember implements IMemberService {
 		String userNick = memberDTO.getUserNick();
 		String userEmail = memberDTO.getUserEmail();
 		Timestamp joinDate = new Timestamp(System.currentTimeMillis());
+		System.out.println(">> User registration was successful ***");
+		System.out.println("userId : " + userId);
+		System.out.println("userPw : " + userPw);
+		System.out.println("userNick : " + userNick);
 		memberRepository.insertMember(userId, userPw, userName, userNick, userEmail, joinDate);
 	}
 

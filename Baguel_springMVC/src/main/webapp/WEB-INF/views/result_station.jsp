@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <!DOCTYPE html>
-<html>
 <html lang="ko">
 
 <head>
@@ -74,20 +73,20 @@
       <div id="result">
         <div id="selectDate">
           <h4>날짜</h4>
-          <input type="text" placeholder=${selectDate}>
+          <input type="text" placeholder="${stationDTO.selectDate }" readonly>
         </div>
         <div id="selectPlace">
           <h4>장소</h4>
-          <input type="text" placeholder=${line}-${stationName}>
+          <input type="text" placeholder="${stationDTO.line}-${stationDTO.stationName}" readonly>
         </div>
       </div>
     
       <div id="ERR">
         <!-- <h4>검색 결과</h4> -->
         <h1>
-          ${selectDate} ${line} ${stationName} 역의
+          ${stationDTO.selectDate} ${stationDTO.line} ${stationDTO.stationName}역의
           <br>예측 혼잡률은
-          <mark>${ERR}</mark> 입니다.
+          <mark>${stationDTO.err}</mark> 입니다.
         </h1>
       </div>
 
@@ -128,7 +127,7 @@
       
       <div id="chart">
       	<div id="chartTitle">
-      		<h1>${selectDate} ${line} ${stationName}역<br>시간별 혼잡률</h1> 
+      		<h1>${stationDTO.selectDate} ${stationDTO.line} ${stationDTO.stationName}역<br>시간별 혼잡률</h1> 
       	</div>
       	<div id="perTimeChart" >
       		<canvas id="myChart" ></canvas>
@@ -241,14 +240,12 @@
 	           
 	                options: { 
 	                	responsive: true,
-	                	
 	                    scales: {
-	                    	y: [{
-	                            ticks: {
+	                    	y: {
+	                           
 	                                beginAtZero:true
-	                            }
-	                        }]
-
+	                         
+	                        }
 	                    }
 	                }
 	            });

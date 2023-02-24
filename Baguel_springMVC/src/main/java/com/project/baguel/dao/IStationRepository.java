@@ -1,6 +1,5 @@
 package com.project.baguel.dao;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
@@ -12,15 +11,13 @@ public interface IStationRepository {
 
 	ArrayList<StationDTO> getTodayBest5();
 	
-	String getStationERR(@Param("selectDate")Date selectDate,
+	String getStationERR(@Param("selectDate")String selectDate,
 			@Param("line")String line,
 			@Param("stationName")String stationName);
 	
-	//ArrayList<StationDTO> getTimeSData(StationDTO stationDTO);
-	
-	
-	ArrayList<StationDTO> getTimeSData(@Param("selectDate")Date selectDate,
+	ArrayList<StationDTO> getTimeSData(@Param("selectDate")String selectDate,
 			@Param("line")String line,
 			@Param("stationName")String stationName);
 	
+	String[] getStationNames(@Param("line")String line);
 }

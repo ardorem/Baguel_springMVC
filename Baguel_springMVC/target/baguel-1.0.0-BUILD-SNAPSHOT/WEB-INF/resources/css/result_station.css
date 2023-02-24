@@ -1,0 +1,127 @@
+/* ##################  main start ################## */
+main {
+  height: 1600px;
+}
+/*  **********************************************************    slide */
+#mainTitle h1 {
+  margin: 50px;
+  text-align: center;
+}
+#result {
+  /* justify-content: stretch; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  /* flex-wrap: wrap; */
+}
+#result h4{
+  text-shadow: 0 -1px 0 #222;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+input{
+  width: 400px;
+  height: 60px;
+  border: 5px solid #00B050;
+  padding: 10px;
+  font-size: 30px;
+}
+
+#selectPlace {
+  margin: 0 20px 0px 50px;
+  padding-left: 10px;
+}
+
+#ERR{
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background-color: #D1D1D1;*/
+  margin: 0 15% 10px 15%;
+}
+#ERR h1{
+  text-shadow: 0 -1px 0 #222;
+  font-size: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.8;
+}
+#ERR mark{
+	background-color: rgb(132, 208, 137);
+}
+#others{
+  margin: 30px 0 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ERRexplain{
+
+  align-items: center;
+  justify-content: center;
+}
+#ERRTable{
+  border : 1px solid #D1D1D1;
+  border-collapse: collapse;
+  
+}
+th,td{
+  border : 1px solid #D1D1D1;
+  padding: 10px;
+  text-align: center;
+}
+#seamless{
+  background-color: #6FCB7A;
+  border-top: 2px solid #D1D1D1;
+}
+#normal{
+ background-color: #F7F466;
+}
+#crowded{
+  background-color: #FA5F2E;
+}
+#standard{
+  margin-top: 10px;
+}
+#button{
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* float: right; */
+  margin-top: 30px;
+  margin-left: 8%;
+}
+#backIcon{
+  width: 150px;
+  height: 75px;
+  background-color: transparent;
+  border: none;
+}
+#moreIcon{
+  width: 150px;
+  height: 75px;
+  background-color: transparent;
+  border: none;
+  margin-left: 30px;
+} 
+#chart{
+  width: 70%; 
+  text-align:center; 
+  justify-content: center;
+  margin: 0 auto;
+}
+#chartTitle{
+	margin-bottom: 20px;
+}
+#perTimeChart{
+  width: 100%; 
+  display:flex; 
+  margin: 0 auto;
+  	
+}
+/*  ***********************************************    slide */
+/* ##################  main end ################## */

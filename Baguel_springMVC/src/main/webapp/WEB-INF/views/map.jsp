@@ -22,49 +22,49 @@
   <script>
     const pin_line1 = [
 			<c:forEach items="${line1 }" var="line">
-				<c:set var="line1Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line1Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line1Url}" },
 			</c:forEach>
     ];
     const pin_line2 = [
 			<c:forEach items="${line2 }" var="line">
-				<c:set var="line2Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line2Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line2Url}" },
 			</c:forEach>
     ];
     const pin_line3 = [
 			<c:forEach items="${line3 }" var="line">
-				<c:set var="line3Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line3Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line3Url}" },
 			</c:forEach>
     ];
     const pin_line4 = [
 			<c:forEach items="${line4 }" var="line">
-				<c:set var="line4Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line4Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line4Url}" },
 			</c:forEach>
     ];
     const pin_line5 = [
 			<c:forEach items="${line5 }" var="line">
-				<c:set var="line5Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line5Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line5Url}" },
 			</c:forEach>
     ];
     const pin_line6 = [
 			<c:forEach items="${line6 }" var="line">
-				<c:set var="line6Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line6Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line6Url}" },
 			</c:forEach>
     ];
     const pin_line7 = [
 			<c:forEach items="${line7 }" var="line">
-				<c:set var="line7Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line7Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line7Url}" },
 			</c:forEach>
     ];
     const pin_line8 = [
 			<c:forEach items="${line8 }" var="line">
-				<c:set var="line8Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}&click="/>
+				<c:set var="line8Url" value="${pageContext.request.contextPath}/result_station?selectDate=${selectDateStation}&line=${line.line}&stationName=${line.stationName}"/>
 			 { line: "${line.line}", lineNo: "${line.lineNo}", stationNo: "${line.stationNo}", stationName: "${line.stationName}", lng: ${line.lng}, lat: ${line.lat}, err: "${line.err}", url: "${line8Url}" },
 			</c:forEach>
     ];

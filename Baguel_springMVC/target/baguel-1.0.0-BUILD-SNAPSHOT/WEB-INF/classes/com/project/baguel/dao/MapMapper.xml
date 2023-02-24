@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.baguel.dao.IMapRepository">
+	
+	<resultMap type="com.project.baguel.model.StationMapDTO"
+		id="getAllErr">
+		<result property="selectDate" column="selectDate" />
+		<result property="line" column="line" />
+		<result property="lineNo" column="lineNo" />
+		<result property="stationNo" column="stationNo" />
+		<result property="stationName" column="stationName" />
+		<result property="err" column="err" />
+		<result property="lat" column="lat" />
+		<result property="lng" column="lng" />
+	</resultMap>
+	
+	<select id="getAllLines" resultType="String">
+		SELECT line
+		FROM STATIONS
+		GROUP BY line
+		ORDER BY line
+	</select>
+	
+	<select id="getAllErr" resultMap="getAllErr">
+		SELECT e.selectDate, s.line, SUBSTR(s.line,0,1) as lineNo, s.stationNo,
+		s.stationName, e.err as err, s.lat, s.lng
+		FROM STATIONS s, ERR2023 e
+		WHERE s.stationName = e.stationName AND s.line = e.line
+		AND e.selectDate = #{selectDate} AND s.line = #{line}
+	</select>
+
+</mapper>

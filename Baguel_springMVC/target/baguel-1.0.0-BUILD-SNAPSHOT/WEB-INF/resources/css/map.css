@@ -1,0 +1,229 @@
+/* ##################  main start ################## */
+
+main {
+  animation: fadein 3s;
+  width: 100%;
+  margin-bottom: 300px;
+}
+
+#mapMain {
+  width: 90%;
+  margin: 50px auto;
+}
+
+#mapInfo {
+  width: 70%;
+  min-width: 530px;
+  margin: 0px auto;
+}
+
+
+#colorBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+
+#colorName {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-family: "NanumRg";
+  font-weight: 700;
+  border: 1px solid grey;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  text-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.521);
+}
+
+#map {
+  min-width: 340px;
+  margin: 10px auto;
+  height: 800px;
+}
+
+#mapRow {
+  width: 90%;
+  margin: 5px auto;
+}
+/* ############################################# MAP START */
+/* GMap infowindow X버튼 지우기 */
+button.gm-ui-hover-effect {
+  visibility: hidden;
+}
+
+
+.gm-style .gm-style-iw-c {
+  background-color: rgba(0, 0, 0, 0.692) !important;
+  color: white;
+  padding: 5px !important;
+  text-align: center !important;
+  font-size: 2em !important;
+  width: 300px;
+  min-height: 100px;
+  padding: 10px 3px !important;
+}
+
+/* scroll bar at the info window */
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece {
+  display: none;
+}
+
+/* arrow at the bottom */
+.gm-style .gm-style-iw-tc::after {
+  background-color: rgba(0, 0, 0, 0.692) !important;
+}
+.emphasis {
+  color: #74e609;
+  font-size: 1.3em;
+  font-weight: 800;
+}
+/* ######################################### MAP fin. */
+
+#showHideButtons {
+  width: 90%;
+  margin: 5px auto;
+}
+
+#showHideButtons > div > button {
+  width: 100%;
+  min-height: 60px;
+}
+/* ############################################# show markers start*/
+#show-line1-markers {
+  background-color: #08308F;
+  border: none;
+  min-width: 70px;
+}
+#show-line2-markers {
+  background-color: #0EA349;
+  border: none;
+  min-width: 70px;
+}
+#show-line3-markers {
+  background-color: #F08302;
+  border: none;
+  min-width: 70px;
+}
+#show-line4-markers {
+  background-color: #00A5DF;
+  border: none;
+  min-width: 70px;
+}
+#show-line5-markers {
+  background-color: #A14A9B;
+  border: none;
+  min-width: 70px;
+}
+#show-line6-markers {
+  background-color: #D09012;
+  border: none;
+  min-width: 70px;
+}
+#show-line7-markers {
+  background-color: #627535;
+  border: none;
+  min-width: 70px;
+}
+#show-line8-markers {
+  background-color: #E84E72;
+  border: none;
+  min-width: 70px;
+}
+#show-place-markers {
+  background-color: #c20000;
+  border: none;
+  min-width: 70px;
+}
+/* ############################ show fin. */
+
+/* ############################################# hide markers start*/
+#hide-line1-markers {
+  background-color: #08318f6b;
+  border: none;
+  min-width: 70px;
+}
+#hide-line2-markers {
+  background-color: #0ea34a59;
+  border: none;
+  min-width: 70px;
+}
+#hide-line3-markers{
+  background-color: #f085023f;
+  border: none;
+  min-width: 70px;
+}
+#hide-line4-markers {
+  background-color: #00a4df40;
+  border: none;
+  min-width: 70px;
+}
+#hide-line5-markers {
+  background-color: #a14a9b4b;
+  border: none;
+  min-width: 70px;
+}
+#hide-line6-markers {
+  background-color: #d0911249;
+  border: none;
+  min-width: 70px;
+}
+#hide-line7-markers {
+  background-color: #62753541;
+  border: none;
+  min-width: 70px;
+}
+#hide-line8-markers {
+  background-color: #e84e7248;
+  border: none;
+  min-width: 70px;
+}
+#hide-place-markers {
+  background-color: #c2000035;
+  border: none;
+  min-width: 70px;
+}
+
+#hide-line1-markers:hover{
+  background-color: #08318faf;
+  border: none;
+
+}
+#hide-line2-markers:hover {
+  background-color: #0ea34aa9;
+  border: none;
+}
+#hide-line3-markers:hover {
+  background-color: #f08502a9;
+  border: none;
+}
+#hide-line4-markers:hover {
+  background-color: #00a4df9d;
+  border: none;
+}
+#hide-line5-markers:hover {
+  background-color: #a14a9b8d;
+  border: none;
+}
+#hide-line6-markers:hover {
+  background-color: #d091129e;
+  border: none;
+}
+#hide-line7-markers:hover {
+  background-color: #6275359b;
+  border: none;
+}
+#hide-line8-markers:hover {
+  background-color: #e84e7294;
+  border: none;
+}
+#hide-place-markers:hover {
+  background-color: #c200008d;
+  border: none;
+}
+/* ############################ hide fin. */
